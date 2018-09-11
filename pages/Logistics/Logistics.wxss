@@ -1,0 +1,59 @@
+/* pages/Logistics/Logistics.wxss */
+.wl-logo{
+    width: 141rpx;
+  height: 141rpx;
+}
+.kefu{
+    width: 59rpx;
+  height: 59rpx;
+}
+.wl-til{
+  font-size: 28rpx
+}
+.wl{
+  height: 141rpx;
+  background: white;
+  margin-top: 10rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 30rpx;
+  padding-left: 20rpx
+}
+.wl-2{
+    display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+    height: 141rpx;
+}
+.wl-yd-biaohao{
+  display: flex;
+  flex-direction: column
+}
+.wl-yd{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 115rpx;
+  background: white;
+  margin-top: 10rpx;
+  align-items: center;
+  font-size: 28rpx;
+  padding-left: 30rpx;
+  padding-right: 30rpx
+
+}
+.wl-mc{
+  font-size: 32rpx;
+  margin-bottom: 10rpx
+}
+
+.wl-dh{
+  color: #9D9D9D
+}
+.wl-ysz{
+ color: #9D9D9D
+  
+}

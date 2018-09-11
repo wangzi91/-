@@ -1,0 +1,179 @@
+<!--导航条-->
+<view class="navbar">
+  <text wx:for="{{navbar}}" data-idx="{{index}}" class="item {{currentTab==index ? 'active' : ''}}" wx:key="unique" bindtap="navbarTap">{{item}}</text>
+</view>
+<!-- 全部 -->
+<view hidden="{{currentTab!==0}}">
+  <view wx:for='{{allOrder}}'>
+    <view class='order-all'>
+      <view class='order-all-t1'>
+        <view>下单时间：{{item.time}}</view>
+        <view class='dd-flex'>
+          <view class='red' wx:if='{{item.transaction_status == 0? true : false}}'>等待卖家支付</view>
+          <view class='green' wx:if='{{item.transaction_status == 2? true : false}}'>已完成</view>
+          <view class='red' wx:if='{{item.transaction_status == 1? true : false}}'>待收货</view>
+        </view>
+      </view>
+      <view class='qrdd'>
+        <view class='qrdd-left'>
+          <image src='{{item.picture}}'></image>
+          <view class='qrdd-tit'>
+            <view class='qedd-tit-tit1'>{{item.name}}</view>
+            <view class='qrdd-price'>￥{{item.price}}</view>
+          </view>
+        </view>
+        <view class='qrdd-num'>x{{item.purchase_number}}</view>
+      </view>
+    </view>
+    <view class="yingfu">
+      <view class='yingfu-left'>
+        <view>应付：</view>
+        <view class='red'>￥{{item.amount_payable}}</view>
+      </view>
+      <view class='yingfu-right'>
+        <view class='quxiaodingdan' wx:if='{{item.transaction_status == 2? true : false}}' data-index='{{index}}' data-id='{{item.id}}' catchtap='qbdelorder2'>删除订单</view>
+        <view class='quxiaodingdan' wx:if='{{item.transaction_status == 0? true : false}}' data-id='{{item.id}}' bindtap='quxiaodingdan'>取消订单</view>
+        <view class='quzhifu' style='margin-left:15rpx' wx:if='{{item.transaction_status == 0? true : false}}'>去支付</view>
+        <view class='quxiaodingdan' wx:if='{{item.transaction_status == 1? true : false}}'>退货</view>
+        <view class='quzhifu' style='margin-left:15rpx' wx:if='{{item.transaction_status == 1? true : false}}'>确认收货</view>
+      </view>
+    </view>
+  </view>
+</view>
+<!-- 待支付 -->
+<view hidden="{{currentTab!==1}}">
+
+  <block wx:for='{{daizhifu}}'>
+    <view bindtap='gounpay'>
+      <view class='order-all'>
+        <view class='order-all-t1'>
+          <view>下单时间：{{item.time}}</view>
+          <view class='red'>等待买家付款</view>
+        </view>
+        <view class='qrdd'>
+          <view class='qrdd-left'>
+            <image src='{{item.picture}}'></image>
+            <view class='qrdd-tit'>
+              <view class='qedd-tit-tit1'>{{item.name}}</view>
+              <view class='qrdd-price'>￥{{item.price}}</view>
+            </view>
+          </view>
+          <view class='qrdd-num'>x{{item.purchase_number}}</view>
+        </view>
+      </view>
+      <view class="yingfu">
+        <view class='yingfu-left'>
+          <view>应付：</view>
+          <view class='red'>￥{{item.amount_payable}}</view>
+        </view>
+        <view class='yingfu-right'>
+          <view class='quxiaodingdan' data-id='{{item.id}}' catchtap='quxiaodingdan'>取消订单</view>
+          <view class='quzhifu' style='margin-left:15rpx'>去支付</view>
+        </view>
+      </view>
+    </view>
+  </block>
+
+</view>
+<!-- 待收货 -->
+<view hidden="{{currentTab!==2}}">
+
+  <block wx:for='{{daishouhuo}}'>
+    <view class='order-all'>
+      <view class='order-all-t1'>
+        <view>下单时间：{{item.time}}</view>
+        <view class='dd-flex'>
+          <view class='green' wx:if='{{item.transaction_status == 0? true : false}}'>卖家已发货</view>
+          <view class='red' wx:if='{{item.transaction_status == 1? true : false}}'>等待发货</view>
+        </view>
+      </view>
+      <view class='qrdd'>
+        <view class='qrdd-left'>
+          <image src='{{item.picture}}'></image>
+          <view class='qrdd-tit'>
+            <view class='qedd-tit-tit1'>{{item.name}}</view>
+            <view class='qrdd-price'>￥{{item.price}}</view>
+          </view>
+        </view>
+        <view class='qrdd-num'>x{{item.purchase_number}}</view>
+      </view>
+    </view>
+    <view class="yingfu">
+      <view class='yingfu-left'>
+        <view>应付：</view>
+        <view class='red'>￥{{item.amount_payable}}</view>
+      </view>
+      <view class='yingfu-right'>
+        <view class='quxiaodingdan' wx:if='{{item.transaction_status == 1? true : false}}'>退货</view>
+        <view class='quzhifu' style='margin-left:15rpx'>确认收货</view>
+      </view>
+    </view>
+  </block>
+
+</view>
+<!-- 待评价 -->
+<view hidden="{{currentTab!==3}}">
+
+  <block wx:for='{{daipingjia}}'>
+    <view class='order-all'>
+      <view class='order-all-t1'>
+        <view>下单时间：{{item.time}}</view>
+        <view class='dd-flex'>
+          <view class='green'>已支付</view>
+        </view>
+      </view>
+      <view class='qrdd'>
+        <view class='qrdd-left'>
+          <image src='{{item.picture}}'></image>
+          <view class='qrdd-tit'>
+            <view class='qedd-tit-tit1'>{{item.name}}</view>
+            <view class='qrdd-price'>￥{{item.price}}</view>
+          </view>
+        </view>
+        <view class='qrdd-num'>x{{item.purchase_number}}</view>
+      </view>
+    </view>
+    <view class="yingfu">
+      <view class='yingfu-left'>
+        <view>应付：</view>
+        <view class='red'>￥{{item.amount_payable}}</view>
+      </view>
+      <view class='yingfu-right'>
+        <view class='quxiaodingdan' data-index='{{index}}' data-id='{{item.id}}' catchtap='delorder'>删除订单</view>
+        <view class='quzhifu' style='margin-left:15rpx'>去评价</view>
+      </view>
+    </view>
+  </block>
+</view>
+<!-- 已完成 -->
+<view hidden="{{currentTab!==4}}">
+  <block wx:for='{{yiwancheng}}'>
+    <view class='order-all'>
+      <view class='order-all-t1'>
+        <view>下单时间：{{item.time}}</view>
+        <view class='dd-flex'>
+          <view class='green'>已完成</view>
+        </view>
+      </view>
+      <view class='qrdd'>
+        <view class='qrdd-left'>
+          <image src='{{item.picture}}'></image>
+          <view class='qrdd-tit'>
+            <view class='qedd-tit-tit1'>{{item.name}}</view>
+            <view class='qrdd-price'>￥{{item.price}}</view>
+          </view>
+        </view>
+        <view class='qrdd-num'>x{{item.purchase_number}}</view>
+      </view>
+    </view>
+    <view class="yingfu">
+      <view class='yingfu-left'>
+        <view>应付：</view>
+        <view class='red'>￥{{item.amount_payable}}</view>
+      </view>
+      <view class='yingfu-right'>
+        <view class='quxiaodingdan'  data-index='{{index}}' data-id='{{item.id}}' catchtap='ywcdelorder'>删除订单</view>
+      </view>
+    </view>
+  </block>
+</view>

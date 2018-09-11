@@ -1,0 +1,38 @@
+
+<!--pages/home/home.wxml-->
+<!-- <view class="classify-class">
+  <view class="header-class">
+    <view class="header-search">
+      <image src="../../image/search.png"></image>
+      <text>搜索门店商品</text>
+    </view>
+  </view> -->
+
+  <view class="content-class">
+    <view class="content-contain">
+      <view class="nav-left">
+        <scroll-view scroll-y="true" style="height: {{deviceHeight}}px">
+          <block wx:for="{{classifyList}}">
+            <view class="left-item-{{curNav == item.id ? 'activie' : ''}}" data-index="{{index}}" catchtap="switchLeftTab">{{item.tree.desc}}</view>
+          </block>
+          <view style="height:{{deviceHeight / 10}}px"></view>
+        </scroll-view>
+      </view>
+      <view class="nav-right">
+        <scroll-view scroll-y="true" style="height: {{deviceHeight}}px" scroll-top="{{scrolltop}}">
+          <block wx:for="{{classifyList[curIndex].tree.nodes}}">
+            <view class="title">{{item.tree.desc}}</view>
+            <view class="classify-item">
+              <block wx:for="{{item.tree.nodes}}"  >
+                <view class="item" hover-class="hoverclass" catchtap="godetail" data-id="{{item.tree.id}}">
+                  <image src="{{item.tree.logo}}" class="logo"></image>
+                  <view class="name">{{item.tree.desc ? item.tree.desc : item.tree.desc2}}</view>
+                </view>
+              </block>
+            </view>
+          </block>
+          <view style="height:{{deviceHeight / 10}}px"></view>
+        </scroll-view>
+      </view>
+    </view>
+  </view>

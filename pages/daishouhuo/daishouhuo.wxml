@@ -1,0 +1,31 @@
+<block wx:for='{{daishouhuo}}'>
+    <view class='order-all'>
+      <view class='order-all-t1'>
+        <view>下单时间：{{item.time}}</view>
+        <view class='dd-flex'>
+          <view class='green' wx:if='{{item.transaction_status == 0? true : false}}'>卖家已发货</view>
+          <view class='red' wx:if='{{item.transaction_status == 1? true : false}}'>等待发货</view>
+        </view>
+      </view>
+      <view class='qrdd'>
+        <view class='qrdd-left'>
+          <image src='{{item.picture}}'></image>
+          <view class='qrdd-tit'>
+            <view class='qedd-tit-tit1'>{{item.name}}</view>
+            <view class='qrdd-price'>￥{{item.price}}</view>
+          </view>
+        </view>
+        <view class='qrdd-num'>x{{item.purchase_number}}</view>
+      </view>
+    </view>
+    <view class="yingfu">
+      <view class='yingfu-left'>
+        <view>应付：</view>
+        <view class='red'>￥{{item.amount_payable}}</view>
+      </view>
+      <view class='yingfu-right'>
+        <view class='quxiaodingdan' wx:if='{{item.transaction_status == 1? true : false}}'>退货</view>
+        <view class='quzhifu' style='margin-left:15rpx'>确认收货</view>
+      </view>
+    </view>
+  </block>

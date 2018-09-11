@@ -1,0 +1,149 @@
+<view class='head2' wx:if="{{login}}">
+  <image src='../../images/login.jpg'></image>
+  <view class='yuan2' bindtap='gouserinfo'>
+    <image src='{{info.image}}' class='yuan'></image>
+    <view class='edit'>
+      <image src='../../images/edit.png'></image>
+    </view>
+  </view>
+  <view class='star'>
+    <image src='../../images/Star.png'></image>
+    <image src='../../images/Star.png'></image>
+    <image src='../../images/Star.png'></image>
+    <image src='../../images/Star.png'></image>
+    <image src='../../images/Star.png'></image>
+  </view>
+  <view class='username'>
+    {{info.nickName}}
+  </view>
+  <view class='phone'>
+    {{phone}}
+  </view>
+</view>
+<view class='order'>
+  <view class='order-title'>
+    <view>我的订单</view>
+    <view class='order-more'>
+      <view style='margin-right:15rpx;color:#999' bindtap='goorderlist'>查看全部订单</view>
+      <image src='../../images/right_arrow.png' class='arrow'></image>
+    </view>
+  </view>
+  <view class='zhifu'>
+    <view bindtap='godaizhifu'>
+      <image src='../../images/pay.png' class='pay'></image>
+      <view class=''>待支付</view>
+    </view>
+    <view bindtap='godaishouhuo'>
+      <image src='../../images/receipt.png' class='pay'></image>
+      <view class=''>待收货</view>
+    </view>
+    <view bindtap='godaipingjia'>
+      <image src='../../images/comment.png' class='pay'></image>
+      <view class=''>待评价</view>
+    </view>
+    <view bindtap='goyiwancheng'>
+      <image src='../../images/completed.png' class='pay'></image>
+      <view class=''>已完成</view>
+    </view>
+  </view>
+</view>
+
+<view class='userlist'>
+  <view class='list' bindtap='gomyaccount'>
+    <view class='list1'>
+      <image src='../../images/account.png' class='zhanghu'></image>
+      <view>我的账户</view>
+    </view>
+    <view class='list2'>
+      <view class='yue'>余额：{{balance}}</view>
+      <image src='../../images/right_arrow.png' class='arrow'></image>
+    </view>
+  </view>
+  <view class='list' bindtap='gocollect'>
+    <view class='list1'>
+      <image src='../../images/mine_collection.png' class='zhanghu'></image>
+      <view>我的收藏</view>
+    </view>
+    <view class='list2'>
+
+      <image src='../../images/right_arrow.png' class='arrow'></image>
+    </view>
+  </view>
+  <view class='list' bindtap='addr'>
+    <view class='list1'>
+      <image src='../../images/address.png' class='zhanghu'></image>
+      <view>地址管理</view>
+    </view>
+    <view class='list2'>
+
+      <image src='../../images/right_arrow.png' class='arrow'></image>
+    </view>
+  </view>
+  <view class='list' bindtap='gofenxiao'>
+    <view class='list1'>
+      <image src='../../images/Sales.png' class='zhanghu'></image>
+      <view>我的分销</view>
+    </view>
+    <view class='list2'>
+
+      <image src='../../images/right_arrow.png' class='arrow'></image>
+    </view>
+  </view>
+  <view class='list' bindtap='gofankui'>
+    <view class='list1'>
+      <image src='../../images/opinion.png' class='zhanghu'></image>
+      <view>意见反馈</view>
+    </view>
+    <view class='list2'>
+      <image src='../../images/right_arrow.png' class='arrow'></image>
+    </view>
+  </view>
+  <view class='list' bindtap='show'>
+    <view class='list1'>
+      <image src='../../images/footprint.png' class='zhanghu'></image>
+      <view>我的足迹</view>
+    </view>
+    <view class='list2'>
+      <image src='../../images/right_arrow.png' class='arrow'></image>
+    </view>
+  </view>
+  <view class='list'>
+    <view class='list1'>
+      <button class="cs_button" open-type="contact">
+        <image src='../../images/service.png' class=' kefulogo'></image>
+        <view class='lianxikefu'>联系客服 </view>
+      </button>
+    </view>
+    <view class='list2'>
+      <image src='../../images/right_arrow.png' class='arrow'></image>
+    </view>
+  </view>
+  <view class='list' bindtap='quit'>
+    <view class='list1'>
+      <view>清除unid</view>
+    </view>
+    <view class='list2'>
+    </view>
+  </view>
+  <!-- <view class='list' bindtap='quit'>
+    <view class='list1'>
+      <view>退出</view>
+    </view>
+    <view class='list2'>
+    </view>
+  </view>
+  <view class='list' bindtap='clearaddr'>
+    <view class='list1'>
+      <view>清除地址存储</view>
+    </view>
+    <view class='list2'>
+    </view>
+  </view>
+  <view class='list' bindtap='clearcart'>
+    <view class='list1'>
+      <view>清除购物车存储</view>
+    </view>
+    <view class='list2'>
+    </view>
+  </view> -->
+</view>

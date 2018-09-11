@@ -1,0 +1,39 @@
+<!--pages/home/home.wxml-->
+
+
+<view class="content-class">
+  <view class="content-contain">
+    <view class="nav-left">
+      <scroll-view scroll-y="true" style="height: {{deviceHeight}}px">
+        <block wx:for="{{classifyList}}">
+          <view class="left-item-{{curNav == item.id ? 'activie' : ''}}" data-index="{{index}}" catchtap="switchLeftTab">{{item.desc}}</view>
+        </block>
+        <view style="height:{{deviceHeight / 10}}px"></view>
+      </scroll-view>
+    </view>
+    <view class="nav-right">
+      <scroll-view scroll-y="true" style="height: {{deviceHeight}}px" scroll-top="{{scrolltop}}">
+        <block wx:for="{{classifyList[curIndex].children}}">
+
+          <view class='c-title'>
+            <view class="title">{{item.desc}}</view>
+            <view class='index-sm-more'>
+              <view bindtap='goclassify' data-id='{{item.id}}' data-name='{{item.desc}}'>更多</view>
+              <image src='../../images/right_arrow.png' class='more' bindtap='goclassify' data-id='{{item.id}}' data-name='{{item.desc}}'></image>
+            </view>
+          </view>
+
+          <view class="classify-item">
+            <block wx:for="{{item.children}}">
+                <navigator class="item" url="../detail/detail?id={{item.id}}">
+                  <image src="{{item.logo}}" class="logo"></image>
+                  <view class="name">{{item.desc}}</view>
+                </navigator>
+            </block>
+          </view>
+        </block>
+        <view style="height:{{deviceHeight / 10}}px"></view>
+      </scroll-view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,17 @@
+<view class='pj'>
+  <image src='../../images/t5.png' class='pj-logo'></image>
+  <view>泰莱大米</view>
+</view>
+<view style='background:white'>
+  <textarea value='{{formdata}}' class='text'></textarea>
+
+  <view class="big-logos">
+    <view class='logoinfo'>
+      <image src='{{item}}' class='upimg' wx:for="{{img_arr}}" bindlongpress="deleteImage" data-index="{{index}}"></image>
+    </view>
+    <image bindtap="upimg" src='../../images/upimg.png' class='upimg2'></image>
+  </view>
+</view>
+
+
+<view bindtap='upload' class='xiayibu'>评价</view>

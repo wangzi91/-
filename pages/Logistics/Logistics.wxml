@@ -1,0 +1,21 @@
+<view class='wl'>
+  <view class='wl-2'>
+    <image src='../../images/t5.png' class='wl-logo'></image>
+    <view class='wl-til'>泰莱大米</view>
+  </view>
+  <image src='../../images/kefu.png' class='kefu'></image>
+</view>
+
+<view class='wl-yd'>
+  <view class='wl-yd-biaohao'>
+    <view class='wl-mc'>中通快递</view>
+    <view class='wl-dh'>运单号：123333333333</view>
+  </view>
+  <view class='wl-ysz'>
+    运输中
+  </view>
+</view>
+
+<view>
+
+</view>

@@ -1,0 +1,28 @@
+<image src='../../images/Sales_bg.jpg' class='fenxiao'></image>
+<view class='fenxiao-com'>
+  <view class='t1'>我的分销邀请码：
+    <text class='t2'>t3g13rtg15</text>
+  </view>
+  <view class='t3'>将邀请码分享给好友，好友填写成功后即可成为我的分销下级，</view>
+  <view class='t4'>下级用户在商城中购物，您可以获得返现。</view>
+</view>
+
+<view class='shangji'>
+  <view class='shangji-t'>输入上级邀请码成为推广用户</view>
+  <view class='shangji-c'>
+    <view class='shangji-in'>
+      <input type='text'></input>
+    </view>
+    <view class='queren'>确认</view>
+  </view>
+</view>
+
+<view class='shuoming'>
+  <view>说明：</view>
+  <view>
+    若您使用自己的邀请码发展了自己的下级用户，则不能再成为其他人的下级推广用户；
+  </view>
+  <view>
+    若您成为了好友的推广用户，您仍然可以使用您的邀请码自行发展下级推广用户
+  </view>
+</view>

@@ -1,0 +1,32 @@
+<!--导航条-->
+<view class="navbar">
+  <text wx:for="{{navbar}}" data-idx="{{index}}" class="item {{currentTab==index ? 'active' : ''}}" wx:key="unique" bindtap="navbarTap">{{item}}</text>
+</view>
+
+<view hidden="{{currentTab!==0}}">
+  <view class='index-hotsale-con' wx:for='{{rice}}' data-id='{{item.id}}' bindtap='godetail'>
+    <view class='index-hotsale-img'>
+      <image src='{{item.picture}}'></image>
+    </view>
+    <view class='index-hotsale-tit'>{{item.name}}</view>
+    <view class='index-hotsale-tit2'>{{item.brief_description}}</view>
+    <view class='buttom'>
+      <view class='index-hotsale-pri'>￥{{item.price}}</view>
+      <view class='index-hotsale-sale'>销量：{{item.sales}}</view>
+    </view>
+  </view>
+</view>
+
+<view hidden="{{currentTab!==1}}">
+  <view class='index-hotsale-con' wx:for='{{jiage}}' data-id='{{item.id}}' bindtap='godetail'>
+    <view class='index-hotsale-img'>
+      <image src='{{item.picture}}'></image>
+    </view>
+    <view class='index-hotsale-tit'>{{item.name}}</view>
+    <view class='index-hotsale-tit2'>{{item.brief_description}}</view>
+    <view class='buttom'>
+      <view class='index-hotsale-pri'>￥{{item.price}}</view>
+      <view class='index-hotsale-sale'>销量：{{item.sales}}</view>
+    </view>
+  </view>
+</view>

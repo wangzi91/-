@@ -1,0 +1,310 @@
+.head {
+  width: 100%;
+  height: 336rpx;
+  position: relative;
+}
+
+.head image {
+  width: 100%;
+  height: 100%;
+}
+
+.head2 {
+  width: 100%;
+  height: 336rpx;
+  position: relative;
+}
+
+.head2 image {
+  width: 100%;
+  height: 100%;
+}
+
+.yuan {
+  border-radius: 100%;
+}
+
+.yuan2 {
+  width: 110rpx;
+  height: 110rpx;
+  border-radius: 100%;
+  background: #dcdcdc;
+  border: 6rpx solid #fff;
+  position: absolute;
+  top: 30rpx;
+  left: 50%;
+  margin-left: -55rpx;
+}
+
+.un-login {
+  width: 38rpx;
+  height: 38rpx;
+  position: absolute;
+  top: 17rpx;
+  left: 50%;
+  margin-left: -19rpx;
+}
+
+.un-login image {
+  width: 100%;
+  height: 100%;
+}
+
+.un-in {
+  font-size: 20rpx;
+  color: #a7a7a7;
+  text-align: center;
+  margin-top: 59rpx;
+}
+
+.edit {
+  width: 35rpx;
+  height: 35rpx;
+  position: absolute;
+  top: -14rpx;
+  right: 0;
+}
+
+.edit image {
+  width: 100%;
+  height: 100%;
+}
+
+.star {
+  background: #fff;
+  border-radius: 23rpx;
+  width: 156rpx;
+  height: 36rpx;
+  position: absolute;
+  top: 138rpx;
+  left: 50%;
+  margin-left: -75rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding-left: 4rpx;
+  padding-right: 4rpx;
+}
+
+.star image {
+  width: 24rpx;
+  height: 24rpx;
+}
+
+.username {
+  position: absolute;
+  left: 50%;
+  top: 172rpx;
+  transform: translate(-50%);
+  font-size: 26rpx;
+  color: #fff;
+}
+
+.phone {
+  position: absolute;
+  left: 50%;
+  top: 205rpx;
+  transform: translate(-50%);
+  font-size: 26rpx;
+  color: #fff;
+}
+
+.order {
+  width: 710rpx;
+  height: 171rpx;
+  background: white;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  top: 268rpx;
+  border-radius: 10rpx;
+  font-size: 26rpx;
+  /* display: none  */
+}
+
+.phone image {
+  width: 100%;
+}
+
+/* .list {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #e0e0e0;
+  height: 90rpx;
+  background: white;
+  align-items: center;
+  padding-left: 41rpx;
+  padding-right: 20rpx;
+  margin-top: 121rpx;
+} */
+
+/* .list2 {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #e0e0e0;
+  height: 90rpx;
+  background: white;
+  align-items: center;
+  padding-left: 41rpx;
+  padding-right: 20rpx;
+}
+
+.list2:last-child {
+  border-bottom: none;
+} */
+
+.list-logo {
+  width: 33rpx;
+  height: 33rpx;
+  margin-right: 20rpx;
+  /* margin-top: -4rpx; */
+}
+
+.list-logo image {
+  width: 100%;
+  height: 100%;
+}
+
+.list-go {
+  width: 16rpx;
+  height: 25rpx;
+  margin-left: 18rpx;
+  margin-top: -17rpx;
+}
+
+.margin-t0 {
+  margin-top: -2rpx;
+}
+
+.list-go image {
+  width: 100%;
+  height: 100%;
+}
+
+.list-top {
+  display: flex;
+}
+
+.list-left {
+  display: flex;
+}
+
+.list-title {
+  font-size: 26rpx;
+  color: #202020;
+}
+
+.list-yue {
+  font-size: 26rpx;
+  color: #26b13c;
+}
+
+.order-title {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 68rpx;
+  border-bottom: 1rpx solid #e0e0e0;
+  align-items: center;
+  position: relative;
+  padding-right: 17rpx;
+  padding-left: 17rpx;
+}
+
+.order-more {
+  display: flex;
+  flex-direction: row;
+  height: 68rpx;
+  align-items: center;
+}
+
+.order-more image {
+}
+
+.pay {
+  width: 51rpx;
+  height: 50rpx;
+  margin-bottom: -4rpx;
+}
+
+.zhifu {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  padding-left: 62rpx;
+  padding-right: 62rpx;
+  font-size: 22rpx;
+  color: #6c6c6c;
+  height: 104rpx;
+  align-items: center;
+}
+
+.zhanghu {
+  width: 33rpx;
+  height: 33rpx;
+  margin-right: 18rpx;
+}
+
+.list1 {
+  display: flex;
+  flex-direction: row;
+    align-items: center;
+  height: 74rpx;
+}
+
+.list {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 74rpx;
+  border-bottom: 1rpx solid #e0e0e0;
+  padding-left: 45rpx;
+  padding-right: 20rpx;
+}
+
+.userlist {
+  background: white;
+  margin-top: 124rpx;
+  font-size: 26rpx;
+}
+
+.userlist .list:last-child {
+  border: none;
+}
+
+.list2 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 74rpx;
+}
+
+.yue {
+  margin-right: 17rpx;
+  color: #26b13c;
+}
+.cs_button {
+ 
+  border: 0px;
+width: 90%;
+height: 70rpx;
+background: white;
+  position: absolute;
+left: 15rpx;
+display: flex;
+align-items: center
+}
+
+.cs_button:after {
+  border: 0px;
+}
+.kefulogo{
+  width: 33rpx;
+  height: 33rpx
+}
+.lianxikefu{
+  font-size:26rpx;
+  margin-left: 20rpx
+
+}

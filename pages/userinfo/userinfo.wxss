@@ -1,0 +1,51 @@
+/* pages/userinfo/userinfo.wxss */
+.user-img{
+  width:110rpx;
+height:110rpx;
+border-radius:100%;
+margin-right: 25rpx
+}
+.user-info{
+  font-size:26rpx;
+color:#202020;
+}
+.user{
+  display: flex;
+  flex-direction: row;
+  background:#ffffff;
+height:170rpx;
+align-items: center;
+margin-top: 10rpx;
+padding-left: 45rpx
+}
+.list1 {
+  display: flex;
+  flex-direction: row;
+    align-items: center;
+  height: 74rpx;
+}
+.list1 view{
+  font-size:26rpx;
+color:#202020;
+}
+.list {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 74rpx;
+  border-bottom: 1rpx solid #e0e0e0;
+  padding-left: 45rpx;
+  padding-right: 20rpx;
+  background: white
+}
+
+.list2 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 74rpx;
+}
+
+
+

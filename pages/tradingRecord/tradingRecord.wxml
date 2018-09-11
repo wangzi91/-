@@ -1,0 +1,57 @@
+<view class='com'>
+  <view class='jyjl' bindtap='godetail'>
+    <view class='jyjl-com'>
+      <view class='title'>购买商品</view>
+      <view class='month'>2018-05-10
+        <text class='time'>09:26:43</text>
+      </view>
+    </view>
+    <view class='jian'>
+      -160.00
+    </view>
+  </view>
+  <view class='jyjl'>
+    <view class='jyjl-com'>
+      <view class='title'>账户充值</view>
+      <view class='month'>2018-05-10
+        <text class='time'>09:26:43</text>
+      </view>
+    </view>
+    <view class='jia'>
+      +460.00
+    </view>
+  </view>
+  <view class='jyjl'>
+    <view class='jyjl-com'>
+      <view class='title'>余额提现</view>
+      <view class='month'>2018-05-10
+        <text class='time'>09:26:43</text>
+      </view>
+    </view>
+    <view class='jian'>
+      -260.00
+    </view>
+  </view>
+  <view class='jyjl'>
+    <view class='jyjl-com'>
+      <view class='title'>分销返利</view>
+      <view class='month'>2018-05-10
+        <text class='time'>09:26:43</text>
+      </view>
+    </view>
+    <view class='jia'>
+      +230.00
+    </view>
+  </view>
+  <view class='jyjl'>
+    <view class='jyjl-com'>
+      <view class='title'>退款</view>
+      <view class='month'>2018-05-10
+        <text class='time'>09:26:43</text>
+      </view>
+    </view>
+    <view class='jia'>
+      +530.00
+    </view>
+  </view>
+</view>

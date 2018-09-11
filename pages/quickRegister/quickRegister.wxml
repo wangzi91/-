@@ -1,0 +1,28 @@
+<view class='kszc' style='margin-top:10rpx'>
+  <view class='soujihao'>手机号</view>
+  <input placeholder='输入手机号' type='number'></input>
+</view>
+
+<view class='kszc'>
+  <view class='kszc-1'>
+    <view class='soujihao'>验证码</view>
+    <input placeholder='输入验证码' type='number'></input>
+  </view>
+  <button class='yanzhengma' bindtap="getVerificationCode" disabled='{{disabled}}'>{{time}}</button>
+</view>
+
+<view class='kszc'>
+  <view class='nicheng'>昵称</view>
+  <input placeholder='输入昵称'></input>
+</view>
+
+<view class='kszc-3'>
+  <checkbox-group bindchange="checkboxChange">
+    <label class="checkbox" wx:for="{{items}}" class='dis'>
+      <checkbox class='mt' value="{{item.name}}" checked="{{item.checked}}" />
+      <view class="tongyi">{{item.value}}</view>
+    </label>
+  </checkbox-group>
+</view>
+
+<view class='tijiao' bindtap='gopaypwd'>提交</view>

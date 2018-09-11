@@ -1,0 +1,101 @@
+/* pages/quickRegister/quickRegister.wxss */
+.yanzhengma{
+  background:#f8aa09;
+border-radius:53rpx;
+width:164rpx;
+height:53rpx;
+font-size:24rpx;
+color:#ffffff;
+line-height: 53rpx;
+text-align: center;
+border: none;
+  position: absolute;
+  right: 30rpx;
+
+}
+button[class="yanzhengma"]::after {
+  border: 0;
+} 
+.kszc{
+  height: 76rpx;
+  background: white;
+  font-size:26rpx;
+color:#202020;
+display: flex;
+flex-direction: row;
+align-items: center;
+border-bottom: 1rpx solid #e0e0e0;
+padding-left: 30rpx;
+position: relative
+}
+
+.kszc-1{
+  display: flex;
+  flex-direction: row;
+  align-items: center
+}
+.soujihao{
+  margin-right: 50rpx
+}
+.nicheng{
+  margin-right: 76rpx
+}
+/*  重写 checkbox 样式  */
+/* 未选中的 背景样式 */
+checkbox .wx-checkbox-input{
+
+   width: 24rpx; /* 背景的宽 */
+   height: 24rpx; /* 背景的高 */
+}
+/* 选中后的 背景样式 （红色背景 无边框 可根据UI需求自己修改） */
+checkbox .wx-checkbox-input.wx-checkbox-input-checked{
+   border: none;
+   background:#f8aa09;
+}
+
+checkbox .wx-checkbox-input.wx-checkbox-input-checked::before{
+
+   width: 24rpx;/* 选中后对勾大小，不要超过背景的尺寸 */
+   height: 24rpx;/* 选中后对勾大小，不要超过背景的尺寸 */
+   line-height: 24rpx;
+   text-align: center;
+   font-size:20rpx; /* 对勾大小 30rpx */
+   color:#fff; /* 对勾颜色 白色 */
+   background: transparent;
+   transform:translate(-50%, -50%) scale(1);
+   -webkit-transform:translate(-50%, -50%) scale(1);
+}
+.kszc-3{
+  height: 93rpx;
+  background: white;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-left: 30rpx
+}
+.tongyi{
+  font-size:24rpx;
+color:#999999;
+}
+.dis{
+  display: flex;
+  flex-direction: row;
+
+  height: 93rpx;
+  align-items: center
+}
+.mt{
+  margin-top: -10rpx
+}
+.tijiao{
+  background:#f8aa09;
+height:101rpx;
+font-size:32rpx;
+color:#ffffff;
+line-height: 101rpx;
+text-align: center;
+position: fixed;
+bottom: 0;
+width: 100%;
+letter-spacing: 4rpx
+}

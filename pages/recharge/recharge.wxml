@@ -1,0 +1,6 @@
+<!--pages/recharge/recharge.wxml-->
+<view class='chongzhi'>
+  <view class='czje'>充值金额</view>
+  <input type='number' placeholder='输入充值金额'></input>
+</view>
+<view class='xiayibu'>下一步</view>

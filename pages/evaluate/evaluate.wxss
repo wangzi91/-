@@ -1,0 +1,35 @@
+.pj-logo{
+  width: 141rpx;
+  height: 141rpx;
+  margin-right: 20rpx
+}
+.pj{
+  height: 141rpx;
+  background: white;
+  border-bottom: 1rpx solid #e0e0e0;
+  margin-top: 10rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 28rpx;
+  padding-left: 30rpx
+}
+.text{
+  font-size: 26rpx
+}
+.upimg{
+  width: 164rpx;
+  height: 164rpx;
+  margin-left: 17rpx
+}
+.upimg2{
+  width: 164rpx;
+  height: 164rpx;
+  margin-left: 17rpx;
+  margin-top: 20rpx
+}
+.logoinfo{
+  display: flex;
+  flex-direction: row;
+  
+}

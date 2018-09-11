@@ -1,0 +1,34 @@
+<!--pages/withdraw/withdraw.wxml-->
+<view class='chongzhi'>
+  <view class='czje'>提现金额</view>
+  <input type='number' placeholder='输入提现金额'></input>
+</view>
+
+<view class='txje'>
+  <view class='txje-1'>当前可提现金额：1000.00</view>
+  <view class='txje-2'>全部提现</view>
+</view>
+
+<view class='shuoming'>
+  <view>说明：提现后，余额达不到次年返现额度，无法获得奖励</view>
+</view>
+
+<view class='tixian'>
+  <view>提现银行卡</view>
+</view>
+
+<view class='bank'>
+  <view class='tit'>
+     <text style='margin-left:20rpx'>中国建设银行 </text>
+  </view>
+  <view class='bank-num'>
+    <image src='../../images/Bank_logo.png' class='bank-logo'></image>
+    <view >6219************6782</view>
+  </view>
+</view>
+
+<view class='dztime'>
+两小时内到账
+</view>
+
+<view class='xiayibu'>提交</view>

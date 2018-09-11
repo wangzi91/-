@@ -1,0 +1,39 @@
+/* pages/ricemessage/ricemessage.wxss */
+
+.rice-message {
+  height: 176rpx;
+  width: 100%;
+  border-bottom: #e0e0e0 1rpx solid;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: white;
+}
+
+.rice-message-img {
+  width: 190rpx;
+  height: 129rpx;
+  background-color: red;
+}
+.rice-message-img image{
+  width: 100%;
+  height: 100%
+}
+
+.rice-message-title {
+  font-size: 30rpx;
+  width: 480rpx;
+  height: 82rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.rice-message-time {
+  width: 140rpx;
+  height: 33rpx;
+  font-size: 24rpx;
+  color: #6c6c6c;
+}

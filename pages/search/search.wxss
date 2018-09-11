@@ -1,0 +1,142 @@
+/* pages/search/search.wxss */
+page{
+  background: white
+}
+.search{
+  width: 26rpx;
+  height: 26rpx;
+  margin-left: 30rpx;
+  margin-right: 15rpx
+}
+.sousuo{
+  background:#eeeeee;
+border-radius:100rpx;
+width:550rpx;
+height:56rpx;
+display: flex;
+flex-direction: row;
+align-items: center
+}
+.place-holder{
+  font-size:26rpx;
+/* color:#6c6c6c; */
+}
+.shousuobtn{
+  background:#f8aa09;
+border-radius:12rpx;
+width:120rpx;
+height:56rpx;
+font-size:24rpx;
+color:#ffffff;
+text-align: center;
+line-height: 56rpx
+}
+.search-com{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 88rpx;
+  align-items: center;
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+  background: #f8f8f8
+}
+.navbar{
+  flex: none;
+  display: flex;
+  background: #fff;
+}
+.navbar .item{
+  position: relative;
+  flex: auto;
+  text-align: center;
+  height: 60rpx;
+  line-height: 60rpx;
+  font-size: 24rpx;
+  color:#6c6c6c;
+}
+.navbar .item.active{
+  color:#f8aa09;
+}
+.navbar .item.active:after{
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2rpx;
+  background: #f8aa09;
+ 
+}
+.remen{
+  font-size:24rpx;
+color:#6c6c6c;
+background:#eeeeee;
+border-radius:6rpx;
+line-height: 51rpx;
+text-align: center;
+float: left;
+margin-left: 30rpx;
+margin-top: 30rpx;
+height: 51rpx;
+width: 114rpx;
+overflow: hidden;
+text-overflow:ellipsis;
+white-space: nowrap;
+
+}
+.index-hotsale-con {
+  width: 343rpx;
+  float: left;
+  height: 466rpx;
+  /* background-color: yellow; */
+  margin-left: 22rpx;
+  margin-bottom: 12rpx;
+}
+
+.index-hotsale-img {
+  height: 343rpx;
+  width: 343rpx;
+  border: 1rpx #eceef3 solid;
+  margin: 15rpx auto;
+  border-radius: 8rpx;
+}
+
+.index-hotsale-img image {
+  width: 100%;
+  height: 100%;
+}
+
+.index-hotsale-tit {
+  font-size: 24rpx;
+  white-space: nowrap;
+  width: 343rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.index-hotsale-tit2 {
+  font-size: 20rpx;
+  color: #999;
+}
+
+.index-hotsale-pri {
+font-size:24rpx;
+color:#e64340;
+}
+.buttom{
+  display: flex;
+  justify-content: space-between
+}
+.index-hotsale-sale{
+  font-size:24rpx;
+color:#6c6c6c;
+}
+page{
+  background-color: white
+}
+.rem2{
+  width: 100%;
+  height: 110rpx
+}

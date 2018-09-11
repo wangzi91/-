@@ -1,0 +1,22 @@
+/* pages/messagedetails/messagedetails.wxss */
+.title{
+margin-bottom: 20rpx
+}
+.img{
+
+
+height:279rpx;
+margin-bottom: 20rpx
+}
+.img image{
+  width: 100%;
+  height: 100%
+}
+.cons{
+font-size:28rpx;
+color:#202020;
+
+}
+page{
+  background-color: white
+}

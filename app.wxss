@@ -1,0 +1,82 @@
+/**app.wxss**/
+page{
+   background-color: #f8f8f8
+
+}
+.float-left{
+  float: left
+}
+.margin-top{
+  padding-top: 32rpx
+}
+.btn {
+  display: block;
+  width: 40rpx;
+  height: 40rpx;
+  background-color: #efefef;
+  line-height: 40rpx;
+  text-align: center;
+  font-size: 24rpx;
+  margin-right: 4rpx;
+  color:#6c6c6c;
+}
+.red{
+  color:#e64340;
+}
+.quxiaodingdan{
+  width: 142rpx;
+  height: 44rpx;
+  border:1rpx solid #999999; 
+  border-radius:100rpx;
+  color: #999999;
+  line-height: 44rpx;
+  text-align: center;
+  font-size: 26rpx
+}
+.quzhifu{
+background:#f8aa09;
+border-radius:100rpx;
+width:145rpx;
+height:47rpx;
+color: white;
+  line-height: 47rpx;
+  text-align: center;
+}
+.green{
+  color:#26b13c;
+}
+.arrow{
+  width: 16rpx;
+height: 25rpx;
+/* position: absolute;
+top: 50%;
+transform: translate(-50%);
+right: 0 */
+
+}
+.xiayibu{
+  background:#f8aa09;
+border-radius:12rpx;
+width:670rpx;
+height:80rpx;
+font-size:32rpx;
+color:#ffffff;
+margin: 0 auto;
+text-align: center;
+line-height: 80rpx;
+margin-top: 60rpx
+}
+.zezao{
+      display: block;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+    top: 0;
+    background-color: rgba(0,0,0,.5);
+}
+.em{
+ height: 190rpx;
+ width: 100%;
+ display: block 
+}

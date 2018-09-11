@@ -1,0 +1,18 @@
+<!--pages/myaccount/myaccount.wxml-->
+<view class='wdzh'>
+  <image src='../../images/zhanghu.png' class='zhanghuimg'></image>
+  <view class='wdzh-tit'>
+    <view>账户余额：{{userDetail.balance}}元</view>
+    <view>目前可提现金额：{{ketixian}}元</view>
+  </view>
+</view>
+
+<view class='wdzh-com' bindtap='gorecharge'>
+  <text>充值</text>
+</view>
+<view class='wdzh-com' bindtap='gowithdraw'>
+  <text>提现</text>
+</view>
+<view class='wdzh-com' bindtap='gotradingRecord'>
+  <text>交易记录</text>
+</view>

@@ -1,0 +1,216 @@
+<!--导航条-->
+<view class="navbar">
+  <text wx:for="{{navbar}}" data-idx="{{index}}" class="item {{currentTab==index ? 'active' : ''}}" wx:key="unique" bindtap="navbarTap">{{item}}</text>
+</view>
+<!-- 大米 -->
+<view hidden="{{currentTab!==0}}">
+  <view class='desc'>
+      <view class='sale-desc'>销量排序</view>
+    <view class='price-desc'>价格排序</view>
+
+  </view>
+  <view class='index-hotsale-con'  bindtap='godetail'>
+    <view class='index-hotsale-img'>
+      <image src='../../images/t5.png'></image>
+    </view>
+    <view class='index-hotsale-tit'>产品名称产品名称产品名称产品名称产品名称产品名称</view>
+    <view class='index-hotsale-tit2'>简单描述简单描述</view>
+    <view class='buttom'>
+      <view class='index-hotsale-pri'>￥32.90</view>
+      <view class='index-hotsale-sale'>销量：123</view>
+    </view>
+  </view>
+    <view class='index-hotsale-con' bindtap='godetail'>
+    <view class='index-hotsale-img'>
+      <image src='../../images/t5.png'></image>
+    </view>
+    <view class='index-hotsale-tit'>产品名称产品名称产品名称产品名称产品名称产品名称</view>
+    <view class='index-hotsale-tit2'>简单描述简单描述</view>
+    <view class='buttom'>
+      <view class='index-hotsale-pri'>￥32.90</view>
+      <view class='index-hotsale-sale'>销量：123</view>
+    </view>
+  </view>
+    <view class='index-hotsale-con' bindtap='godetail'>
+    <view class='index-hotsale-img'>
+      <image src='../../images/t5.png'></image>
+    </view>
+    <view class='index-hotsale-tit'>产品名称产品名称产品名称产品名称产品名称产品名称</view>
+    <view class='index-hotsale-tit2'>简单描述简单描述</view>
+    <view class='buttom'>
+      <view class='index-hotsale-pri'>￥32.90</view>
+      <view class='index-hotsale-sale'>销量：123</view>
+    </view>
+  </view>
+    <view class='index-hotsale-con' bindtap='godetail'>
+    <view class='index-hotsale-img'>
+      <image src='../../images/t5.png'></image>
+    </view>
+    <view class='index-hotsale-tit'>产品名称产品名称产品名称产品名称产品名称产品名称</view>
+    <view class='index-hotsale-tit2'>简单描述简单描述</view>
+    <view class='buttom'>
+      <view class='index-hotsale-pri'>￥32.90</view>
+      <view class='index-hotsale-sale'>销量：123</view>
+    </view>
+  </view>
+    <view class='index-hotsale-con' bindtap='godetail'>
+    <view class='index-hotsale-img'>
+      <image src='../../images/t5.png'></image>
+    </view>
+    <view class='index-hotsale-tit'>产品名称产品名称产品名称产品名称产品名称产品名称</view>
+    <view class='index-hotsale-tit2'>简单描述简单描述</view>
+    <view class='buttom'>
+      <view class='index-hotsale-pri'>￥32.90</view>
+      <view class='index-hotsale-sale'>销量：123</view>
+    </view>
+  </view>
+    <view class='index-hotsale-con' bindtap='godetail'>
+    <view class='index-hotsale-img'>
+      <image src='../../images/t5.png'></image>
+    </view>
+    <view class='index-hotsale-tit'>产品名称产品名称产品名称产品名称产品名称产品名称</view>
+    <view class='index-hotsale-tit2'>简单描述简单描述</view>
+    <view class='buttom'>
+      <view class='index-hotsale-pri'>￥32.90</view>
+      <view class='index-hotsale-sale'>销量：123</view>
+    </view>
+  </view>
+    <view class='index-hotsale-con' bindtap='godetail'>
+    <view class='index-hotsale-img'>
+      <image src='../../images/t5.png'></image>
+    </view>
+    <view class='index-hotsale-tit'>产品名称产品名称产品名称产品名称产品名称产品名称</view>
+    <view class='index-hotsale-tit2'>简单描述简单描述</view>
+    <view class='buttom'>
+      <view class='index-hotsale-pri'>￥32.90</view>
+      <view class='index-hotsale-sale'>销量：123</view>
+    </view>
+  </view>
+    <view class='index-hotsale-con' bindtap='godetail'>
+    <view class='index-hotsale-img'>
+      <image src='../../images/t5.png'></image>
+    </view>
+    <view class='index-hotsale-tit'>产品名称产品名称产品名称产品名称产品名称产品名称</view>
+    <view class='index-hotsale-tit2'>简单描述简单描述</view>
+    <view class='buttom'>
+      <view class='index-hotsale-pri'>￥32.90</view>
+      <view class='index-hotsale-sale'>销量：123</view>
+    </view>
+  </view>
+</view>
+<!-- 小米 -->
+<view hidden="{{currentTab!==1}}">
+  <view class='desc'>
+      <view class='sale-desc'>销量排序</view>
+    <view class='price-desc'>价格排序</view>
+  </view>
+    <view class='index-hotsale-con' bindtap='godetail'>
+    <view class='index-hotsale-img'>
+      <image src='../../images/t5.png'></image>
+    </view>
+    <view class='index-hotsale-tit'>产品名称产品名称产品名称产品名称产品名称产品名称</view>
+    <view class='index-hotsale-tit2'>简单描述简单描述</view>
+    <view class='buttom'>
+      <view class='index-hotsale-pri'>￥32.90</view>
+      <view class='index-hotsale-sale'>销量：123</view>
+    </view>
+  </view>
+</view>
+<!-- 红豆 -->
+<view hidden="{{currentTab!==2}}">
+  <view class='desc'>
+      <view class='sale-desc'>销量排序</view>
+    <view class='price-desc'>价格排序</view>
+  </view>
+    <view class='index-hotsale-con' bindtap='godetail'>
+    <view class='index-hotsale-img'>
+      <image src='../../images/t5.png'></image>
+    </view>
+    <view class='index-hotsale-tit'>产品名称产品名称产品名称产品名称产品名称产品名称</view>
+    <view class='index-hotsale-tit2'>简单描述简单描述</view>
+    <view class='buttom'>
+      <view class='index-hotsale-pri'>￥32.90</view>
+      <view class='index-hotsale-sale'>销量：123</view>
+    </view>
+  </view>
+    <view class='index-hotsale-con' bindtap='godetail'>
+    <view class='index-hotsale-img'>
+      <image src='../../images/t5.png'></image>
+    </view>
+    <view class='index-hotsale-tit'>产品名称产品名称产品名称产品名称产品名称产品名称</view>
+    <view class='index-hotsale-tit2'>简单描述简单描述</view>
+    <view class='buttom'>
+      <view class='index-hotsale-pri'>￥32.90</view>
+      <view class='index-hotsale-sale'>销量：123</view>
+    </view>
+  </view>
+</view>
+<!-- 绿豆 -->
+<view hidden="{{currentTab!==3}}">
+  <view class='desc'>
+      <view class='sale-desc'>销量排序</view>
+    <view class='price-desc'>价格排序</view>
+  </view>
+    <view class='index-hotsale-con' bindtap='godetail'>
+    <view class='index-hotsale-img'>
+      <image src='../../images/t5.png'></image>
+    </view>
+    <view class='index-hotsale-tit'>产品名称产品名称产品名称产品名称产品名称产品名称</view>
+    <view class='index-hotsale-tit2'>简单描述简单描述</view>
+    <view class='buttom'>
+      <view class='index-hotsale-pri'>￥32.90</view>
+      <view class='index-hotsale-sale'>销量：123</view>
+    </view>
+  </view>
+    <view class='index-hotsale-con' bindtap='godetail'>
+    <view class='index-hotsale-img'>
+      <image src='../../images/t5.png'></image>
+    </view>
+    <view class='index-hotsale-tit'>产品名称产品名称产品名称产品名称产品名称产品名称</view>
+    <view class='index-hotsale-tit2'>简单描述简单描述</view>
+    <view class='buttom'>
+      <view class='index-hotsale-pri'>￥32.90</view>
+      <view class='index-hotsale-sale'>销量：123</view>
+    </view>
+  </view>
+    <view class='index-hotsale-con' bindtap='godetail'>
+    <view class='index-hotsale-img'>
+      <image src='../../images/t5.png'></image>
+    </view>
+    <view class='index-hotsale-tit'>产品名称产品名称产品名称产品名称产品名称产品名称</view>
+    <view class='index-hotsale-tit2'>简单描述简单描述</view>
+    <view class='buttom'>
+      <view class='index-hotsale-pri'>￥32.90</view>
+      <view class='index-hotsale-sale'>销量：123</view>
+    </view>
+  </view>
+    <view class='index-hotsale-con' bindtap='godetail'>
+    <view class='index-hotsale-img'>
+      <image src='../../images/t5.png'></image>
+    </view>
+    <view class='index-hotsale-tit'>产品名称产品名称产品名称产品名称产品名称产品名称</view>
+    <view class='index-hotsale-tit2'>简单描述简单描述</view>
+    <view class='buttom'>
+      <view class='index-hotsale-pri'>￥32.90</view>
+      <view class='index-hotsale-sale'>销量：123</view>
+    </view>
+  </view>
+</view>
+<!-- 其他杂粮 -->
+<view hidden="{{currentTab!==4}}">
+  <view class='desc'>
+      <view class='sale-desc'>销量排序</view>
+    <view class='price-desc'>价格排序</view>
+  </view>
+    <view class='index-hotsale-con' bindtap='godetail'>
+    <view class='index-hotsale-img'>
+      <image src='../../images/t5.png'></image>
+    </view>
+    <view class='index-hotsale-tit'>产品名称产品名称产品名称产品名称产品名称产品名称</view>
+    <view class='index-hotsale-tit2'>简单描述简单描述</view>
+    <view class='buttom'>
+      <view class='index-hotsale-pri'>￥32.90</view>
+      <view class='index-hotsale-sale'>销量：123</view>
+    </view>
+  </view>
+</view>

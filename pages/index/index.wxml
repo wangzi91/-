@@ -1,0 +1,125 @@
+<view class='top'>
+  <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" class='index-swiper'>
+    <block wx:for="{{imgUrls}}">
+      <swiper-item>
+        <image src="{{item.picture}}" class="slide-image" width="355" height="150" />
+      </swiper-item>
+    </block>
+  </swiper>
+  <view class='search' bindtap='gosearch'>
+    <image src='../../images/search.png' class='searchicon'></image>
+    <view class='sear'>搜索商品</view>
+  </view>
+</view>
+
+<!-- 8个按钮 -->
+<view class='index-main-classify'>
+  <view class='main'>
+    <view class='index-classify' wx:for="{{navshow}}">
+      <navigator url="{{item.nav_urls}}" hover-class="none">
+        <view class='index-icon'>
+          <image src='{{item.nav_img}}'></image>
+        </view>
+        <text class='fontcolor'>{{item.nav_title}}</text>
+      </navigator>
+    </view>
+
+        <view class='index-classify' bindtap='goliangxun'>
+      <view class='index-icon'>
+        <image src='../../images/lx.png'></image>
+      </view>
+      <text class='fontcolor'>粮讯</text>
+    </view>
+    <view class='index-classify' bindtap='gofenxiao'>
+      <view class='index-icon'>
+        <image src='../../images/fx.png'></image>
+      </view>
+      <text class='fontcolor'>分销</text>
+    </view>
+
+    <view class='index-classify'>
+      <view class='index-icon'>
+        <image src='../../images/kf.png'></image>
+        <button class="cs_button" open-type="contact"></button>
+      </view>
+      <text class='fontcolor'>客服</text>
+    </view>
+
+    <view class='index-classify' bindtap='golist'>
+      <view class='index-icon'>
+        <image src='../../images/dd.png'></image>
+      </view>
+      <text class='fontcolor'>订单</text>
+    </view>
+
+
+  </view>
+</view>
+<!-- 粮讯 -->
+<view>
+  <view class='index-rice-message-title'>
+    <view class='index-sm-title'>粮讯</view>
+    <view class='index-sm-more' bindtap='goricemessage'>
+      <view class='float-left'>更多</view>
+      <view class='more'>
+        <image src='../../images/right_arrow.png'></image>
+      </view>
+    </view>
+  </view>
+  <view class='index-rice-message-content' bindtap='gomessagedetail' data-id='{{ricedetail.id}}'>
+    <view class='index-r-img'>
+      <image src='{{ricedetail.list_picture}}'></image>
+    </view>
+    <view class='index-r-content'>
+      <view class='index-r-title'>{{ricedetail.title}}</view>
+      <view class='index-r-article'>{{ricedetail.content}}</view>
+    </view>
+  </view>
+</view>
+<!-- 品牌推荐 -->
+<view>
+  <view class='index-rice-message-title'>
+    <view class='index-sm-title'>品牌推荐</view>
+    <view class='index-sm-more' bindtap='goclassify'>
+      <view class='float-left'>更多</view>
+      <view class='more'>
+        <image src='../../images/right_arrow.png'></image>
+      </view>
+    </view>
+  </view>
+  <view class='index-recommend'>
+    <view class='index-recommend-banner'>
+      <image src='../../images/t4.png'></image>
+    </view>
+    <view class='index-recommend-logo'>
+      <image src='../../images/t3.png'></image>
+    </view>
+    <view class='index-recommend-flex'>
+      <scroll-view class="scroll-view_H" scroll-x>
+        <view class='index-recommend-product-con' bindtap='godetail' wx:for='{{tuijian}}' data-id='{{item.id}}'>
+          <view class='index-recommend-product-img'>
+            <image src='{{item.picture}}'></image>
+          </view>
+          <view class='index-recommend-product-tit'>{{item.name}}</view>
+          <view class='index-recommend-product-price'>￥{{item.price}}</view>
+        </view>
+      </scroll-view>
+    </view>
+  </view>
+</view>
+<!-- 商品热卖 -->
+<view>
+  <view class='index-rice-message-title'>
+    <view class='index-sm-title'>热卖推荐</view>
+  </view>
+  <view class='index-hotsale'>
+    <view class='index-hotsale-con'  wx:for='{{remai}}' data-id='{{item.id}}' bindtap='godetail'>
+      <view class='index-hotsale-img'>
+        <image src='{{item.picture}}'></image>
+      </view>
+      <view class='index-hotsale-tit'>{{item.name}}</view>
+      <view class='index-hotsale-tit2'>{{item.brief_description}}</view>
+      <view class='index-hotsale-pri'>￥{{item.price}}</view>
+    </view>
+  </view>
+</view>

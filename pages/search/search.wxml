@@ -1,0 +1,57 @@
+<view class='search-com'>
+  <view class='sousuo'>
+    <image src='../../images/search.png' class='search'></image>
+    <input placeholder='{{placeholder}}' placeholder-class="place-holder" bindinput='searchGoods' value='{{val}}'></input>
+  </view>
+  <view class='shousuobtn' bindtap='search'>搜索</view>
+</view>
+
+<!--导航条-->
+<view class="navbar">
+  <text wx:for="{{navbar}}" data-idx="{{index}}" class="item {{currentTab==index ? 'active' : ''}}" wx:key="unique" bindtap="navbarTap">{{item}}</text>
+</view>
+<!-- 热门 -->
+<view hidden="{{currentTab!==0}}">
+  <view class='rem2'>
+    <view class='remen' wx:for="{{remen}}" data-value='{{item.search_word}}' bindtap='remenss'>
+      {{item.search_word}}
+    </view>
+  </view>
+
+
+  <block wx:for='{{searchItem}}'>
+    <view class='index-hotsale-con' data-idx='{{item.s1}}' bindtap='godetail'>
+      <view class='index-hotsale-img'>
+        <image src='{{item.picture}}'></image>
+      </view>
+      <view class='index-hotsale-tit'>{{item.name}}</view>
+      <view class='index-hotsale-tit2'>{{item.brief_description}}</view>
+      <view class='buttom'>
+        <view class='index-hotsale-pri'>￥{{item.price}}</view>
+        <view class='index-hotsale-sale'>销量：{{item.s2}}</view>
+      </view>
+    </view>
+  </block>
+
+</view>
+<!-- 最近 -->
+<view hidden="{{currentTab!==1}}">
+  <view class=' rem2'>
+    <view class='remen' wx:for="{{zuijin}}" bindtap='remenss2' data-value='{{item}}'>
+      {{item}}
+    </view>
+  </view>
+  <block wx:for='{{searchItem2}}'>
+    <view class='index-hotsale-con' data-idx='{{item.s1}}' bindtap='godetail'>
+      <view class='index-hotsale-img'>
+        <image src='{{item.picture}}'></image>
+      </view>
+      <view class='index-hotsale-tit'>{{item.name}}</view>
+      <view class='index-hotsale-tit2'>{{item.brief_description}}</view>
+      <view class='buttom'>
+        <view class='index-hotsale-pri'>￥{{item.price}}</view>
+        <view class='index-hotsale-sale'>销量：{{item.s2}}</view>
+      </view>
+    </view>
+  </block>
+</view>

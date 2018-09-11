@@ -1,0 +1,60 @@
+/* pages/feedback/feedback.wxss */
+.fankui-tit{
+  font-size:30rpx;
+color:#202020;
+padding-top: 30rpx;
+margin-left: 28rpx;
+margin-bottom: 10rpx
+}
+.fankui-com{
+  border:1rpx solid #979797;
+border-radius:8rpx;
+width:688rpx;
+height:330rpx;
+margin: 0 auto
+}
+.fankui-tishi{
+  font-size:24rpx;
+color:#999999;
+width: 690rpx;
+height: 64rpx;
+margin: 0 auto;
+margin-top: 10rpx;
+
+}
+.kongjian{
+  letter-spacing: 20rpx
+}
+.fankui{
+background: white;
+margin-top: 10rpx;
+height: 518rpx
+}
+.zzimg{
+  width: 92rpx;
+  height: 92rpx;
+  margin-top: 60rpx
+}
+.zezaocom{
+  background:#ffffff;
+border-radius:12rpx;
+width:548rpx;
+height:390rpx;
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%,-50%);
+display: flex;
+flex-direction: column;
+align-items: center
+}
+.t1{
+  font-size:36rpx;
+color:#26b13c;
+margin-top: 19rpx;
+margin-bottom: 47rpx
+}
+.t2{
+  font-size:30rpx;
+color:#202020;
+}

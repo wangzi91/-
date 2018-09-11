@@ -1,0 +1,14 @@
+<!--pages/ricemessage/ricemessage.wxml-->
+<block wx:for="{{messagelist}}">
+<view class='rice-message' bindtap='gomessdetail' data-id='{{item.id}}'>
+  <view class='rice-message-img'>
+    <image src='{{item.list_picture}}'></image>
+  </view>
+  <view class='rice-message-con'>
+    <view class='rice-message-title'>{{item.title}}</view>
+    <view class='rice-message-time'>{{item.time}}</view>
+  </view>
+
+</view>
+</block>
+

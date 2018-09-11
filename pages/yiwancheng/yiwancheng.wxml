@@ -1,0 +1,29 @@
+<block wx:for='{{yiwancheng}}'>
+    <view class='order-all'>
+      <view class='order-all-t1'>
+        <view>下单时间：{{item.time}}</view>
+        <view class='dd-flex'>
+          <view class='green'>已完成</view>
+        </view>
+      </view>
+      <view class='qrdd'>
+        <view class='qrdd-left'>
+          <image src='{{item.picture}}'></image>
+          <view class='qrdd-tit'>
+            <view class='qedd-tit-tit1'>{{item.name}}</view>
+            <view class='qrdd-price'>￥{{item.price}}</view>
+          </view>
+        </view>
+        <view class='qrdd-num'>x{{item.purchase_number}}</view>
+      </view>
+    </view>
+    <view class="yingfu">
+      <view class='yingfu-left'>
+        <view>应付：</view>
+        <view class='red'>￥{{item.amount_payable}}</view>
+      </view>
+      <view class='yingfu-right'>
+        <view class='quxiaodingdan' data-index='{{index}}' data-id='{{item.id}}' catchtap='ywcdelorder'>删除订单</view>
+      </view>
+    </view>
+  </block>

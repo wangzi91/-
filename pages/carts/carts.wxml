@@ -1,0 +1,64 @@
+<!--pages/carts/carts.wxml-->
+<view wx:if="{{cartList}}" class='stylecart'>
+  <view class='c-uncart'>
+    <view class='c-logo'>
+      <image src='../../images/uncart.png'></image>
+    </view>
+    <view class='c-text'>购物车空空如也， 去逛逛吧~</view>
+  </view>
+</view>
+
+<view class='edit' wx:if="{{hideedit}}" bindtap='editdel'>
+编辑商品  
+</view>
+<view class='edit' wx:if="{{showedit}}" bindtap='showcart'>
+完成  
+</view>
+
+<view class="container">
+  <view class="touch-item {{item.isTouchMove ? 'touch-move-active' : ''}}" data-index="{{index}}" bindtouchstart="touchstart" bindtouchmove="touchmove" wx:for="{{cartItems}}" wx:key="">
+    <view class="content">
+      <view class='icon'>
+        <icon wx:if="{{item.selected}}" data-index="{{index}}" data-price='{{item.price}}' data-id='{{item.id}}' data-value='{{item.value}}' data-price='{{item.price}}' type="success" color="#f8aa09" size="20" bindtap="selectedCart" data-index="{{index}}" />
+        <icon wx:else type="circle" data-index="{{index}}" data-price='{{item.price}}' data-id='{{item.id}}' data-value='{{item.value}}' data-price='{{item.price}}' bindtap="selectedCart" size="20" data-index="{{index}}" />
+      </view>
+      <view class='c-img'>
+        <image src='{{item.picture}}'></image>
+      </view>
+
+      <view>
+        <view class='cart-attr'>
+          <view>{{item.name}}</view>
+        </view>
+
+        <view class='pricecolor'>￥{{item.price}}元</view>
+      </view>
+      <view class='cart-v'>
+        <text bindtap='reduce' data-index="{{index}}"  class='btn' data-price='{{item.price}}' data-id='{{item.id}}' data-value='{{item.value}}' data-price='{{item.price}}' class='btn'>-</text>
+        <text class='btn'>{{item.value}}</text>
+        <text bindtap='add' data-index="{{index}}" class='btn' data-price='{{item.price}}' data-id='{{item.id}}' data-value='{{item.value}}' data-price='{{item.price}}' >+</text>
+      </view>
+
+    </view>
+    <view class="del" catchtap="del" data-index="{{index}}" data-id="{{item.id}}">删除</view>
+  </view>
+</view>
+
+<view class="cart-bottom" wx:if="{{showtot}}">
+  <icon wx:if="{{CheckAll}}" class="cart-icon" type="success" color="#f8aa09" size="20" bindtap="select" data-index="{{index}}" />
+  <icon wx:else type="circle" class="cart-icon" size="20" bindtap="select" data-index="{{index}}" />
+  <text class='checkAll'>全选</text>
+
+  <view class='cart-pay' wx:if="{{jisuanshow}}">
+    <text class='cart_pay' data-id="{{item.id}}" bindtap='goorder'>结算</text>
+  </view>
+  <view class='cart-pay' wx:if="{{shanchushow}}">
+    <text class='cart_pay'  bindtap='seldel'>删除</text>
+  </view>
+  <view class='cart-sum' wx:if="{{totalshow}}">
+    <text class='cart_sum'>
+      <text class='sum_text'>总计：</text>
+      <text class='sum_color'>{{total}}</text>
+    </text>
+  </view>
+</view>

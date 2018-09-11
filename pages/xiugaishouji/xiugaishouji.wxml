@@ -1,0 +1,46 @@
+<view class='list' style='margin-top:10rpx' bindtap='showzz'>
+  <view class='list1'>
+    <view>验证原手机号</view>
+  </view>
+  <view class='list2'>
+    <image src='../../images/right_arrow.png' class='arrow'></image>
+  </view>
+</view>
+
+<view class='zezao' wx:if="{{showzezao}}">
+  <view class='zezaocom'>
+    <view class='t1'>验证手机号</view>
+    <view class='t2'>验证码已发送至尾号</view>
+    <view class='t2'>为
+      <text style='color:#2AAF3E'>“1234”</text>的授权手机</view>
+    <view class='t3'>
+      <input placeholder='短信验证码' placeholder-class="place-holder" type='number'></input>
+      <button class='yanzhengma' bindtap="getVerificationCode" disabled='{{disabled}}'>{{time}}</button>
+    </view>
+    <view class='queding' bindtap='next1'>确定</view>
+  </view>
+</view>
+
+<view class='zezao' wx:if="{{showzezao2}}">
+  <view class='zezaocom'>
+    <view class='t1'>绑定新手机号</view>
+
+    <view class='t4'>
+      <input placeholder='输入新手机号' placeholder-class="place-holder" type='number'></input>
+    </view>
+    <view class='t3'>
+      <input placeholder='短信验证码' placeholder-class="place-holder" type='number'></input>
+      <button class='yanzhengma' bindtap="getVerificationCode" disabled='{{disabled}}'>{{time}}</button>
+    </view>
+    <view class='queding' bindtap='next2'>确定</view>
+  </view>
+</view>
+
+<view class='zezao' wx:if="{{showzezao3}}">
+  <view class='zezaocom'>
+    <image src='../../images/success2.png' class='succ'></image>
+    <view class='t5'>已成功绑定手机号</view>
+    <view class='t6'>请用尾号为
+      <text style='color:#2AAF3E'>“1234”</text>的手机进行操作</view>
+  </view>
+</view>

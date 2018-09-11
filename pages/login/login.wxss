@@ -1,0 +1,146 @@
+/* pages/login/login.wxss */
+
+.login {
+  display: flex;
+  height: 90rpx;
+  border-bottom: 1px solid #e0e0e0;
+  align-items: center;
+  background: white;
+}
+
+.in-phonenum {
+  width: 361rpx;
+  height: 30rpx;
+  font-size: 28rpx;
+  /* border: 1px solid red */
+}
+
+.login:first-child {
+  margin-top: 10rpx;
+}
+
+.phonenum {
+  font-size: 28rpx;
+  color: #202020;
+  margin-left: 30rpx;
+  margin-right: 50rpx;
+}
+
+.phcolor {
+  font-size: 24rpx;
+  color: #999;
+}
+
+.pwd {
+  margin-left: 56rpx;
+}
+
+.login-btn {
+  width: 670rpx;
+  height: 80rpx;
+  background: #f8aa09;
+  border-radius: 12rpx;
+  font-size: 32rpx;
+  color: #fff;
+  text-align: center;
+  line-height: 80rpx;
+  letter-spacing: 23rpx;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  top: 428rpx;
+}
+
+.login-btn2 {
+  width: 670rpx;
+  height: 80rpx;
+  background: #26b13c;
+  border-radius: 12rpx;
+  font-size: 32rpx;
+  color: #fff;
+  /* text-align: center; */
+  line-height: 80rpx;
+  letter-spacing: 4rpx;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  top: 516rpx;
+  padding-left:100rpx;
+
+}
+
+.fast {
+  position: absolute;
+  right: 52rpx;
+  justify-content: space-between;
+  top: 614rpx;
+}
+
+.forget {
+  font-size: 24rpx;
+  color: #e64340;
+}
+
+.wxlogin {
+  font-size: 24rpx;
+  color: #999;
+  background: rgba(0, 0, 0, 0);
+}
+
+
+
+.login-btn2 image {
+  width: 44rpx;
+  height: 36rpx;
+  position: absolute;
+  top: 24rpx;
+  left: 190rpx;
+}
+
+.t3 {
+  display: flex;
+  width: 620rpx;
+  border-bottom: 1rpx solid #e0e0e0;
+  height: 64rpx;
+  margin: 0 auto;
+  margin-top: 54rpx;
+  position: relative
+}
+
+.t4 {
+  display: flex;
+  width: 620rpx;
+  border-bottom: 1rpx solid #e0e0e0;
+  height: 64rpx;
+  margin: 0 auto;
+  margin-top: 224rpx;
+}
+button::after {
+  border: none;
+
+}
+
+.t3 button {
+  /* background: #f8aa09;
+  border-radius: 53rpx;
+  width: 217rpx;
+  height: 53rpx;
+  font-size: 24rpx;
+  color: #fff;
+  line-height: 53rpx;
+  text-align: center;
+  border: none; */
+  background: #f8aa09;
+    border-radius: 53rpx;
+    height: 53rpx;
+    line-height: 53rpx;
+    font-size: 24rpx;
+    position: absolute;
+    right: 0;
+    color: white
+}
+
+.place-holder {
+  font-size: 24rpx;
+  color: #999;
+}

@@ -1,0 +1,24 @@
+<view class='xiangqing'>
+  <view class='xq-tit'>
+    <view class='xq-jine'>金额</view>
+    <view class='xq-price'>160.00</view>
+  </view>
+  <view class='xq-tit2'>
+    <view class='xq-com'>
+      <view class='xq-com-xl'>类型</view>
+      <view class='xq-com-zc'>支出</view>
+    </view>
+    <view class='xq-com'>
+      <view class='xq-com-xl'>方式</view>
+      <view class='xq-com-zc'>购买商品</view>
+    </view>
+    <view class='xq-com'>
+      <view class='xq-com-xl'>时间</view>
+      <view class='xq-com-zc'>2018-05-26</view>
+    </view>
+    <view class='xq-com'>
+      <view class='xq-com-xl'>交易单号</view>
+      <view class='xq-com-zc'>56565656565656</view>
+    </view>
+  </view>
+</view>

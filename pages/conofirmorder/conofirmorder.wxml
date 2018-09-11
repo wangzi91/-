@@ -1,0 +1,96 @@
+<view bindtap='chooseaddr' class='chooseaddr2' wx:if="{{unaddr}}">
+  <view class='newaddr'>
+    <view class='jia'>
+      <image src='../../images/more.png'></image>
+    </view>
+    <view class='add-addr'>
+      新增收货地址
+    </view>
+  </view>
+</view>
+<view bindtap='chooseaddr' class='chooseaddr' wx:if="{{inaddr}}">
+  <view class='title'>
+    <view class='shouhuoren'>收货人：{{addr.userName}}</view>
+    <view class='phone'>{{addr.telNumber}}</view>
+  </view>
+  <view class='addrs'>
+    <view class='dingwei'>
+      <image src='../../images/dingwei.png' class='dingweiimg'></image>
+    </view>
+    <view class='adde'>收货地址：{{addr.provinceName}} {{addr.cityName}} {{addr.countyName}} {{addr.detailInfo}}</view>
+    <view class='more'>
+      <image src='../../images/right_arrow.png'></image>
+    </view>
+  </view>
+</view>
+<view bindtap='chooseaddr' class='chooseaddr' wx:if="{{inaddr2}}">
+  <view class='title'>
+    <view class='shouhuoren'>收货人：{{add_userName}}</view>
+    <view class='phone'>{{add_telNumber}}</view>
+  </view>
+  <view class='addrs'>
+    <view class='dingwei'>
+      <image src='../../images/dingwei.png' class='dingweiimg'></image>
+    </view>
+    <view class='adde'>收货地址：{{add_provinceName}} {{add_cityName}} {{add_countyName}} {{add_detailInfo}}</view>
+    <view class='more'>
+      <image src='../../images/right_arrow.png'></image>
+    </view>
+  </view>
+</view>
+<view class='bot'>
+  <image src='../../images/bottom.png'></image>
+</view>
+
+<view class='qrdd' wx:for="{{selarr}}">
+  <view class='qrdd-left'>
+    <image src='{{item.picture}}' class='qrdd-img'></image>
+    <view class='qrdd-tit'>
+      <view class='qedd-tit-tit1'>{{item.name}}</view>
+      <view class='qrdd-price'>￥{{item.price}}</view>
+    </view>
+  </view>
+  <view class='qrdd-num'>x{{item.value}}</view>
+</view>
+
+<view class='qrdd-fkfs'>
+  <view class='qrdd-fkfs-tit'>支付方式</view>
+  <view>
+    <radio-group class="radio-group" bindchange="radioChange">
+      <label class="radio" wx:for="{{items}}">
+        <radio color='#f8aa09' value="{{item.name}}" checked="{{item.checked}}" />{{item.value}}
+      </label>
+    </radio-group>
+  </view>
+</view>
+<view class='qrdd-fkfs'>
+  <view class='qrdd-fkfs-tit'>配送方式</view>
+  <view class='qrdd-kdps'>快递配送</view>
+</view>
+<view class='qrdd-fkfs'>
+  <view class='qrdd-fkfs-tit'>是否使用积分</view>
+  <view class='qrdd-kdps'>
+    <view class="body-view">
+      <switch bindchange="integral" />
+    </view>
+  </view>
+</view>
+<view class='qedd-jifen' wx:if='{{showjifen}}'>
+可用积分为：1233
+</view>
+<view class='qrdd-ly'>
+  <view class='qrdd-fkfs-tit-2' style='margin-right:20rpx'>买家留言</view>
+  <textarea style="margin-top:{{detail ? '8rpx':'24rpx'}}" placeholder="选填：填写内容已和卖家协商确认" placeholder-class='placeholder' />
+</view>
+
+<view class="cart-bottom">
+  <view class='cart-pay'>
+    <text class='cart_pay' data-id="{{item.id}}" bindtap='asd'>结算</text>
+  </view>
+  <view class='cart-sum'>
+    <text class='cart_sum'>
+      <text class='sum_text'>合计：</text>
+    <text class='sum_color'>￥{{total}}</text>
+    </text>
+  </view>
+</view>

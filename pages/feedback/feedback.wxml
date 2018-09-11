@@ -1,0 +1,19 @@
+<!--pages/feedback/feedback.wxml-->
+<view class='fankui'>
+  <view class='fankui-tit'>感谢您留下宝贵的意见</view>
+  <view class='fankui-com'>
+    <textarea>
+    </textarea>
+  </view>
+  <view class='fankui-tishi'>请输入您的意见和建议，工作人员将在第一时间评估处理。感谢您的热心反馈哦！</view>
+</view>
+<view class='xiayibu kongjian' bindtap='sub'>提交</view>
+
+<view class='zezao' wx:if="{{showzezao}}">
+  <view class='zezaocom'>
+    <image src="../../images/success.png" class='zzimg'></image>
+    <view class='t1'>意见提交成功</view>
+    <view class='t2'>工作人员将会在第一时间评估处理</view>
+    <view class='t2'>感谢您的反馈</view>
+  </view>
+</view>

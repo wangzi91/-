@@ -1,0 +1,39 @@
+/* pages/tradingDetails/tradingDetails.wxss */
+.xq-tit{
+  display: flex;
+  justify-content: space-between;
+  height: 77rpx;
+  background: white;
+  align-items: center;
+  border-bottom: 1rpx solid #e0e0e0
+}
+.xq-jine{
+  font-size:26rpx;
+color:#202020;
+}
+.xq-price{
+  font-size:26rpx;
+color:#e64340;
+}
+.xq-tit2{
+  font-size:24rpx;
+color:#202020;
+}
+.xq-com{
+    display: flex;
+  justify-content: space-between;
+  height: 34rpx;
+  background: white;
+  align-items: center;
+  padding-top: 22rpx
+}
+.xq-tit2 .xq-com:last-child{
+  padding-bottom: 40rpx
+}
+.xq-tit, .xq-com{
+  padding-left: 30rpx;
+  padding-right: 30rpx
+}
+.xiangqing{
+  margin-top: 10rpx
+}

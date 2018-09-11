@@ -1,0 +1,36 @@
+/* pages/myaccount/myaccount.wxss */
+
+.zhanghuimg {
+  width: 71rpx;
+  height: 54rpx;
+}
+
+.wdzh {
+  height: 145rpx;
+  background-image: linear-gradient(22deg, #099917, #3ee06f 100%);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.wdzh-tit {
+  display: flex;
+  flex-direction: column;
+  font-size: 24rpx;
+  color: #fff;
+  margin-left: 28rpx;
+}
+
+.wdzh-com {
+  height: 75rpx;
+  background: white;
+  font-size: 28rpx;
+  color: #202020;
+  line-height: 75rpx;
+  margin-top: 10rpx
+}
+
+.wdzh-com text {
+  margin-left: 30rpx;
+}

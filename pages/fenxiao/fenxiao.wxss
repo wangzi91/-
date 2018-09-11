@@ -1,0 +1,85 @@
+/* pages/fenxiao/fenxiao.wxss */
+
+.fenxiao {
+  width: 100%;
+  height: 365rpx;
+}
+
+.fenxiao-com {
+  background: #fff;
+  height: 162rpx;
+  margin-top: -10rpx;
+  padding-left: 30rpx;
+  padding-top: 34rpx;
+}
+
+.t1 {
+  font-size: 30rpx;
+  color: #202020;
+  margin-bottom: 14rpx;
+}
+
+.t2 {
+  color: #26b13c;
+}
+
+.t3 {
+  font-size: 24rpx;
+  color: #202020;
+  margin-bottom: 5rpx;
+}
+
+.t4 {
+  font-size: 24rpx;
+  color: #202020;
+}
+
+.shangji {
+  height: 183rpx;
+  background: white;
+  margin-top: 10rpx;
+  font-size: 30rpx;
+  color: #202020;
+  padding-top: 30rpx;
+  padding-left: 30rpx;
+}
+
+.shangji-in {
+  border: 1rpx solid #979797;
+  border-radius: 12rpx;
+  width: 458rpx;
+  height: 78rpx;
+  margin-top: 20rpx;
+}
+
+.shangji-in input {
+  height: 78rpx;
+  margin-left: 10rpx;
+}
+
+.queren {
+  background: #f8aa09;
+  border-radius: 12rpx;
+  width: 158rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  font-size: 32rpx;
+  color: #fff;
+  letter-spacing: 4rpx;
+  margin-top: 20rpx;
+  margin-left: 54rpx;
+}
+
+.shangji-c {
+  display: flex;
+}
+
+.shuoming {
+  width: 690rpx;
+  height: 178rpx;
+  font-size: 24rpx;
+  color: #999;
+  padding-left: 30rpx;
+  padding-top: 20rpx
+}

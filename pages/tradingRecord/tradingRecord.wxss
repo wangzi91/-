@@ -1,0 +1,37 @@
+/* pages/tradingRecord/tradingRecord.wxss */
+.jyjl{
+  display: flex;
+  justify-content: space-between;
+  height: 118rpx;
+  background: white;
+  align-items: center;
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+border-bottom: 1rpx solid #e0e0e0
+}
+.month ,.time{
+  font-size:24rpx;
+color:#999999;
+}
+.time{
+  margin-left: 18rpx
+}
+.title{
+  font-size:26rpx;
+color:#202020;
+margin-bottom: 10rpx
+}
+.jian{
+  font-size:26rpx;
+color:#e64340;
+}
+.jia{
+  font-size:26rpx;
+color:#26b13c;
+}
+.com .jyjl:first-child{
+  margin-top: 10rpx
+}
+.com .jyjl:last-child{
+  border: none
+}

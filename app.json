@@ -1,0 +1,88 @@
+{
+  "pages": [
+        "pages/conofirmorder/conofirmorder",
+        "pages/classify2/classify2",
+      "pages/index/index",
+
+      
+       
+        "pages/carts/carts",
+
+
+    "pages/payPassword/payPassword",
+    "pages/user/user",
+    "pages/evaluate/evaluate",
+    "pages/daipingjia/daipingjia",
+    "pages/yiwancheng/yiwancheng",
+    "pages/daishouhuo/daishouhuo",
+    "pages/daizhifu/daizhifu",
+    "pages/myorder/myorder",
+    "pages/login/login",
+
+    "pages/riceclassify/riceclassify",
+    "pages/ricemain/ricemain",
+    "pages/search/search",
+    "pages/Logistics/Logistics",
+    "pages/tradesucc/tradesucc",
+    "pages/unpaid/unpaid",
+
+    "pages/detail/detail",
+    "pages/tradingDetails/tradingDetails",
+    "pages/tradingRecord/tradingRecord",
+    "pages/changePassword/changePassword",
+    "pages/resetPassword/resetPassword",
+    "pages/about/about",
+    "pages/quickRegister/quickRegister",
+    "pages/xiugaishouji/xiugaishouji",
+    "pages/userinfo/userinfo",
+    "pages/fenxiao/fenxiao",
+    "pages/feedback/feedback",
+    "pages/withdraw/withdraw",
+    "pages/myaccount/myaccount",
+    "pages/recharge/recharge",
+    "pages/collect/collect",
+    "pages/classify/classify",
+    "pages/quit/quit",
+    "pages/ricemessage/ricemessage",
+    "pages/logs/logs",
+    "pages/messagedetails/messagedetails"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "鹤粮商城",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#929292",
+    "backgroundColor": "#ffffff",
+    "selectedColor": "#26b13c",
+    "borderStyle": "#e0e0e0",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "images/home-normal.png",
+        "selectedIconPath": "images/home-active.png"
+      },
+      {
+        "pagePath": "pages/classify2/classify2",
+        "text": "分类",
+        "iconPath": "images/lists-normal.png",
+        "selectedIconPath": "images/lists-active.png"
+      },
+      {
+        "pagePath": "pages/carts/carts",
+        "text": "购物车",
+        "iconPath": "images/shopping_cart-noemal.png",
+        "selectedIconPath": "images/shopping_cart-active.png"
+      },
+      {
+        "pagePath": "pages/user/user",
+        "text": "我的",
+        "iconPath": "images/mine-normal.png",
+        "selectedIconPath": "images/mine-active.png"
+      }
+    ]
+  }
+}
