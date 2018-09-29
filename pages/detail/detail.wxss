@@ -325,6 +325,7 @@ swiper image {
   margin-bottom: 85rpx;
   background-color: white;
   margin-top: 20rpx;
+clear: fi
 }
 
 .default {
@@ -471,4 +472,8 @@ margin-top: 15rpx
 }
 .cs_button .text{
   margin-top: -10rpx
+}
+.kong{
+  height: 18rpx;
+  width: 100%
 }

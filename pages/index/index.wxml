@@ -15,16 +15,39 @@
 <!-- 8个按钮 -->
 <view class='index-main-classify'>
   <view class='main'>
-    <view class='index-classify' wx:for="{{navshow}}">
+    <!-- <view class='index-classify' wx:for="{{navshow}}">
       <navigator url="{{item.nav_urls}}" hover-class="none">
         <view class='index-icon'>
           <image src='{{item.nav_img}}'></image>
         </view>
         <text class='fontcolor'>{{item.nav_title}}</text>
       </navigator>
+    </view> -->
+    <view class='index-classify' bindtap='gomainrice'>
+      <view class='index-icon'>
+        <image src='../../images/zl.png'></image>
+      </view>
+      <text class='fontcolor'>主粮</text>
     </view>
-
-        <view class='index-classify' bindtap='goliangxun'>
+    <view class='index-classify' bindtap='gozaliang'>
+      <view class='index-icon'>
+        <image src='../../images/zal.png'></image>
+      </view>
+      <text class='fontcolor'>杂粮</text>
+    </view>
+    <view class='index-classify' bindtap='gofushi'>
+      <view class='index-icon'>
+        <image src='../../images/fs.png'></image>
+      </view>
+      <text class='fontcolor'>套餐</text>
+    </view>
+    <view class='index-classify' bindtap='gotiaowei'>
+      <view class='index-icon'>
+        <image src='../../images/tw.png'></image>
+      </view>
+      <text class='fontcolor'>调味</text>
+    </view>
+    <view class='index-classify' bindtap='goliangxun'>
       <view class='index-icon'>
         <image src='../../images/lx.png'></image>
       </view>
@@ -89,7 +112,7 @@
   </view>
   <view class='index-recommend'>
     <view class='index-recommend-banner'>
-      <image src='../../images/t4.png'></image>
+      <image src='{{guanggao.picture}}' ></image>
     </view>
     <view class='index-recommend-logo'>
       <image src='../../images/t3.png'></image>
@@ -113,7 +136,7 @@
     <view class='index-sm-title'>热卖推荐</view>
   </view>
   <view class='index-hotsale'>
-    <view class='index-hotsale-con'  wx:for='{{remai}}' data-id='{{item.id}}' bindtap='godetail'>
+    <view class='index-hotsale-con' wx:for='{{remai}}' data-id='{{item.id}}' bindtap='godetail'>
       <view class='index-hotsale-img'>
         <image src='{{item.picture}}'></image>
       </view>

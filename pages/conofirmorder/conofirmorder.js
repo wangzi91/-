@@ -14,21 +14,74 @@ Page({
         name: '0',
         value: '余额支付'
       },
-      {
-        name: '1',
-        value: '微信支付',
-        // checked: 'true'
-      },
+      // {
+      //   name: '1',
+      //   value: '微信支付',
+      //   // checked: 'true'
+      // },
     ],
-    showjifen:false
+    showjifen: false,
+    total: '',
+    showpay: false,
+    con:'',
+    showtear:true
   },
+  //是否使用积分
   integral: function(e) {
-    console.log('积分按钮值为', e.detail.value)
+    var that = this
+
+    var uid = wx.getStorageSync('userid')
+    var bs = wx.getStorageSync('bs')
+    var usejifen = e.detail.value
+    this.setData({
+      usejifen: usejifen
+    })
+    console.log('积分按钮值为', this.data.usejifen)
     if (e.detail.value) {
       this.setData({
-        showjifen:true
+        showjifen: true
       })
-    }else{
+      wx.request({
+        url: 'https://sale.heliangwang.com/mp/getOrderAdd.php',
+        method: 'POST',
+        data: {
+          'function': 'getPoint',
+          uid: uid,
+          amount: that.data.total
+        },
+        header: {
+          'content-type': 'application/x-www-form-urlencoded'
+
+        },
+        success: function(res) {
+          console.log(res)
+          that.setData({
+            msg: res.data.msg,
+            total: res.data.amount,
+            jifen: res.data.point,
+            zexianjine: res.data.pointcredit
+          })
+        }
+      })
+    } else {
+      wx.request({
+        url: 'https://sale.heliangwang.com/mp/getOrderAdd.php',
+        data: {
+          'function': 'getShowOrderCar',
+          uid: uid,
+          bs: bs
+        },
+        header: {
+          'content-type': 'application/x-www-form-urlencoded'
+        },
+        method: 'POST',
+        success: function(res) {
+          console.log(res)
+          that.setData({
+            total: res.data.sellar
+          })
+        }
+      })
       this.setData({
         showjifen: false
       })
@@ -55,6 +108,41 @@ Page({
 
     }
 
+  },
+  gozezhao: function() {
+    if (!this.data.values) {
+      wx.showToast({
+        title: "请选择支付方式",
+        icon: 'loading',
+        duration: 1000
+      })
+      return false
+    }
+    if (this.data.unaddr == true) {
+      wx.showToast({
+        title: '请填写收货地址',
+        icon: 'loading',
+        duration: 1000,
+        mask: true
+      })
+      return false
+    } else {
+      // setTimeout(function() {
+      //   wx.navigateTo({
+      //     url: '../tradesucc/tradesucc',
+      //   })
+      // }, 1500)
+    }
+    this.setData({
+      showpay: true,
+      showtear:false
+    })
+  },
+  quxiao: function() {
+    this.setData({
+      showpay: false,
+      showtear: true
+    })
   },
   onShow: function() {
     var that = this
@@ -128,12 +216,109 @@ Page({
     })
 
   },
+  //获取支付密码
+  zhifumima: function(e) {
+    this.setData({
+      zfmm: e.detail.value
+    })
+    console.log(this.data.zfmm)
+  },
+  //获取留言
+  bindWordLimit: function(e) {
+    this.setData({
+      con: e.detail.value
+    })
+    console.log(this.data.con)
+  },
   asd: function() {
-    console.log(this.data.values)
-    if (this.data.values == 0) {
+    var that = this
+    var uid = wx.getStorageSync('userid')
+    console.log(uid)
+    var addr = this.data.addr
+    //金额
+    var total = this.data.total
+    //姓名
+    var name = addr.userName
+    //是否使用积分
+    var usejifen = this.data.usejifen
+    //电话
+    var phone = addr.telNumber
+    //地址
+    var address = addr.provinceName + addr.cityName + addr.countyName + addr.detailInfo
+    console.log(address)
+    var cartItems = this.data.selarr
+    //支付密码
+    var zfmima = this.data.zfmm
+    if (!zfmima) {
       wx.showToast({
-        title: "余额支付",
-        duration: 1000
+        title: '请输入密码',
+        icon: 'loading'
+      })
+      return false
+    }
+    //留言
+    var liuyan = this.data.con
+    var arrsel2 = []
+    for (var i = 0; i < cartItems.length; i++) {
+      if (cartItems[i].selected == true) {
+        arrsel2.push({
+          id: cartItems[i].goods_id,
+          value: cartItems[i].value,
+          price: cartItems[i].price,
+          origin: cartItems[i].place_of_origin
+        })
+      }
+    }
+    //商品对象
+    var jarr2 = JSON.stringify(arrsel2)
+    console.log(jarr2)
+    //余额支付
+    if (this.data.values == 0) {
+      wx.request({
+        url: 'https://sale.heliangwang.com/mp/getOrderAdd.php',
+        data: {
+          'function': 'getAdding',
+          uid: uid,
+          pwd: zfmima,
+          name: name,
+          phone: phone,
+          address: address,
+          amount: total,
+          ptype: 0,
+          message: liuyan,
+          pointbs: usejifen,
+          pointcredit: that.data.zexianjine,
+          point: that.data.jifen,
+          data: jarr2
+        },
+        header: {
+          'content-type': 'application/x-www-form-urlencoded'
+        },
+        method: 'POST',
+        success: function(res) {
+          console.log(res)
+          if (res.data.code != 0) {
+            wx.showToast({
+              title: res.data.msg,
+              icon: 'loading'
+            })
+            that.setData({
+              showpay: false
+            })
+            return false
+          } else {
+            that.setData({
+              showpay:false,
+              showtear: true
+            })
+            wx.showToast({
+              title: res.data.msg,
+            })
+            wx.navigateTo({
+              url: '../tradesucc/tradesucc',
+            })
+          }
+        }
       })
     }
     if (this.data.values == 1) {
@@ -144,28 +329,6 @@ Page({
       })
       return false
     }
-    if (!this.data.values) {
-      wx.showToast({
-        title: "请选择支付方式",
-        icon: 'loading',
-        duration: 1000
-      })
-      return false
-    }
-    if (this.data.unaddr == true) {
-      wx.showToast({
-        title: '请填写收货地址',
-        icon: 'loading',
-        duration: 1000,
-        mask: true
-      })
-      return false
-    } else {
-      // setTimeout(function() {
-      //   wx.navigateTo({
-      //     url: '../tradesucc/tradesucc',
-      //   })
-      // }, 1500)
-    }
+
   }
 })

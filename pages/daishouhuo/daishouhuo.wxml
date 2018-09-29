@@ -25,7 +25,8 @@
       </view>
       <view class='yingfu-right'>
         <view class='quxiaodingdan' wx:if='{{item.transaction_status == 1? true : false}}'>退货</view>
-        <view class='quzhifu' style='margin-left:15rpx'>确认收货</view>
+        <view class='kanwuliu' style='margin-left:15rpx' wx:if='{{item.transaction_status == 0? true : false}}' data-id='{{item.id}}' data-wlgs='{{item.logistics_name}}' data-dh='{{item.logistics_order_number}}' bindtap='gowuliu'>查看物流</view>
+        <view class='quzhifu' style='margin-left:15rpx' data-id='{{item.id}}' bindtap='goqrsh'>确认收货</view>
       </view>
     </view>
   </block>

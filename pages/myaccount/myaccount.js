@@ -5,15 +5,40 @@ Page({
    * 页面的初始数据
    */
   data: {
-    userDetail: [],
-    ketixian:'0.00'
+    // userDetail: [],
+    // ketixian:'0.00'
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
+  gopaypwd: function () {
+    wx.navigateTo({
+      url: '../payPassword/payPassword',
+    })
+  },
   onLoad: function (options) {
-  
+    var uid = wx.getStorageSync('userid')
+    var that = this
+    wx.request({
+      url: 'https://sale.heliangwang.com/mp/getMineAccount.php',
+      data: {
+        'function': 'getMineAccount',
+        uid: uid
+      },
+      header: {
+        'content-type': 'application/x-www-form-urlencoded'
+      },
+      method: 'POST',
+      success: function (res) {
+        console.log(res)
+        that.setData({
+          yue: res.data.account_balance,
+          ketixianyue: res.data.current_withdraw_cash,
+          jifen: res.data.rest_reward_points
+        })
+      }
+    })
   },
 
   /**
@@ -27,10 +52,10 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    var userDetail = wx.getStorageSync('userDetail')
-    this.setData({
-      userDetail: userDetail
-    })
+    // var userDetail = wx.getStorageSync('userDetail')
+    // this.setData({
+    //   userDetail: userDetail
+    // })
   },
 
   /**
@@ -65,7 +90,7 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-  
+
   },
   gorecharge:function(){
     wx.navigateTo({
@@ -81,5 +106,10 @@ Page({
     wx.navigateTo({
       url: '../tradingRecord/tradingRecord',
     })
-  }
+  },
+  gowithrawal: function () {
+    wx.navigateTo({
+      url: '../withdrawalRecord/withdrawalRecord',
+    })
+  },
 })

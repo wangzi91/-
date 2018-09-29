@@ -16,6 +16,23 @@ Page({
     wx.navigateTo({
       url: '../detail/detail?id=' + id,
     })
+
+
+    wx.request({
+      url: 'https://sale.heliangwang.com/mp/getMine.php',
+      data: {
+        'function': 'getMineFooterAdd',
+        id: id,
+        uid: this.data.uid
+      },
+      header: {
+        'content-type': 'application/x-www-form-urlencoded'
+      },
+      method: 'POST',
+      success: function (res) {
+        console.log(res)
+      }
+    })
   },
   navbarTap: function (e) {
     var that = this
@@ -54,26 +71,7 @@ Page({
     this.setData({
       id:idx
     })
-    // wx.request({
-    //   url: 'https://sale.heliangwang.com/mp/getCommodityRelated.php',
-    //   data: {
-    //     'function': 'getCommodityUnique',
-    //     id:idx
-    //   },
-    //   header: {
-    //     'content-type': 'application/x-www-form-urlencoded'
-    //   },
-    //   method: 'POST',
-    //   success: function (res) {
-    //     console.log(res)
-    //     that.setData({
-    //       rice: res.data
-    //     })
-    //     wx.setNavigationBarTitle({
-    //       title: name
-    //     })
-    //   }
-    // })
+
     //默认销量排序
     wx.request({
       url: 'https://sale.heliangwang.com/mp/getCommodityRelated.php',
@@ -108,7 +106,10 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+    var uid = wx.getStorageSync('userid')
+    this.setData({
+      uid: uid
+    })
   },
 
   /**

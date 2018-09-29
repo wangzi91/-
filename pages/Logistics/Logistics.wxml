@@ -1,21 +1,29 @@
 <view class='wl'>
   <view class='wl-2'>
-    <image src='../../images/t5.png' class='wl-logo'></image>
-    <view class='wl-til'>泰莱大米</view>
+    <image src='{{wuliu.picture}}' class='wl-logo'></image>
+    <view class='wl-til'>{{wuliu.goods_name}}</view>
   </view>
-  <image src='../../images/kefu.png' class='kefu'></image>
+  <button class="cs_button" open-type="contact">
+    <image src='../../images/kefu.png' class='kefu'></image>
+  </button>
 </view>
 
 <view class='wl-yd'>
   <view class='wl-yd-biaohao'>
-    <view class='wl-mc'>中通快递</view>
-    <view class='wl-dh'>运单号：123333333333</view>
+    <view class='wl-mc'>{{wuliu.ShipperCode}}</view>
+    <view class='wl-dh'>运单号：{{wuliu.LogisticCode}}</view>
   </view>
-  <view class='wl-ysz'>
-    运输中
-  </view>
+  <view class='wl-ysz' wx:if='{{wuliu.State == 0? true : false}}'>暂无轨迹信息</view>
+  <view class='wl-ysz' wx:if='{{wuliu.State == 2? true : false}}'>在途中</view>
+  <view class='wl-ysz' wx:if='{{wuliu.State == 3? true : false}}'>已签收</view>
+  <view class='wl-ysz' wx:if='{{wuliu.State == 4? true : false}}'>问题件</view>
 </view>
 
-<view>
-
+<view class='wlxx'>
+  <block wx:for='{{traces}}'>
+      <view class='wlxx-com'>
+      <view>{{item.AcceptStation}}</view>
+      <view class='wlsj'>{{item.AcceptTime}}</view>
+    </view>
+  </block>
 </view>

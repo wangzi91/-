@@ -1,8 +1,6 @@
 //index.js
 //获取应用实例
-var nav = require('../../utils/mock.js')
 
-var remai = require('../../utils/remai.js')
 const app = getApp()
 
 Page({
@@ -11,20 +9,41 @@ Page({
    * 页面的初始数据
    */
   data: {
-    imgUrls: [
-    ],
+    imgUrls: [],
     indicatorDots: true,
     autoplay: true,
     interval: 5000,
     duration: 1000,
   },
-
+  onShareAppMessage: function () {
+    return {
+      title: '壹粟一生商城',
+      path: '/pages/index/index?id=123'
+    }
+  },
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  onLoad: function(options) {
 
     var that = this
+    //广告
+    wx.request({
+      url: 'https://sale.heliangwang.com/mp/getImage.php',
+      data: {
+        'function': 'getAdv'
+      },
+      header: {
+        'content-type': 'application/x-www-form-urlencoded'
+      },
+      method: 'POST',
+      success: function (res) {
+        console.log(res.data)
+        that.setData({
+          guanggao: res.data
+        })
+      }
+    })
     //轮播
     wx.request({
       url: 'https://sale.heliangwang.com/mp/getImage.php',
@@ -35,14 +54,14 @@ Page({
         'content-type': 'application/x-www-form-urlencoded'
       },
       method: 'POST',
-      success: function (res) {
-        console.log(res)
+      success: function(res) {
+ 
         that.setData({
           imgUrls: res.data
         })
       }
     })
-//梁讯index
+    //梁讯index
     wx.request({
       url: 'https://sale.heliangwang.com/mp/getMessage.php',
       data: {
@@ -52,8 +71,8 @@ Page({
         'content-type': 'application/x-www-form-urlencoded'
       },
       method: 'POST',
-      success: function (res) {
-        console.log(res)
+      success: function(res) {
+ console.log(res)
         that.setData({
           ricedetail: res.data
         })
@@ -69,8 +88,8 @@ Page({
         'content-type': 'application/x-www-form-urlencoded'
       },
       method: 'POST',
-      success: function (res) {
-        console.log(res)
+      success: function(res) {
+  
         that.setData({
           tuijian: res.data
         })
@@ -86,70 +105,116 @@ Page({
         'content-type': 'application/x-www-form-urlencoded'
       },
       method: 'POST',
-      success: function (res) {
-        console.log(res)
+      success: function(res) {
+     
         that.setData({
           remai: res.data
         })
       }
     })
-    this.setData({
-      navshow: nav.navlist,
-    })
-    console.log(this.data.navshow)
-    console.log(this.data.tuijian)
+    // this.setData({
+    //   navshow: nav.navlist,
+    // })
+
   },
 
-  onReachBottom:function(){
-    console.log(1)
+  onReachBottom: function() {
+
   },
-  gosearch:function(){
+  gosearch: function() {
     wx.navigateTo({
       url: '../search/search',
     })
   },
-  goricemessage:function(){
+  goricemessage: function() {
     wx.navigateTo({
       url: '../ricemessage/ricemessage',
     })
   },
-  gomessagedetail:function(e){
+  gomessagedetail: function(e) {
     var id = e.currentTarget.dataset.id
     wx.navigateTo({
-      url: '../messagedetails/messagedetails?id='+id,
+      url: '../messagedetails/messagedetails?id=' + id,
     })
   },
-  gomainrice:function(){
+  gomainrice: function() {
     wx.navigateTo({
       url: '../ricemain/ricemain',
     })
   },
-  godetail:function(e){
-    console.log(e)
-    var id = e.currentTarget.dataset.id
+  gozaliang: function() {
     wx.navigateTo({
-      url: '../detail/detail?id='+id,
+      url: '../zaliang/zaliang',
     })
   },
-  golist:function(){
+  onShow: function () {
+    var uid = wx.getStorageSync('userid')
+    this.setData({
+      uid: uid
+    })
+  },
+  godetail: function(e) {
+    var id = e.currentTarget.dataset.id
+    wx.navigateTo({
+      url: '../detail/detail?id=' + id,
+    })
+    wx.request({
+      url: 'https://sale.heliangwang.com/mp/getMine.php',
+      data: {
+        'function': 'getMineFooterAdd',
+        id: id,
+        uid: this.data.uid
+      },
+      header: {
+        'content-type': 'application/x-www-form-urlencoded'
+      },
+      method: 'POST',
+      success: function (res) {
+        console.log(res)
+        // that.setData({
+        //   xiaomi3: res.data
+        // })
+      }
+    })
+  },
+  golist: function() {
     wx.navigateTo({
       url: '../myorder/myorder',
     })
   },
-  gofenxiao:function(){
-    wx.navigateTo({
-      url: '../fenxiao/fenxiao',
+  gofenxiao: function() {
+    // wx.navigateTo({
+    //   url: '../fenxiao/fenxiao',
+    // })
+    wx.showToast({
+      title: '开发中！',
+      icon: 'loading'
     })
   },
-  goclassify:function(){
-wx.switchTab({
-  url: '../classify2/classify2',
-})
+  goclassify: function() {
+    wx.switchTab({
+      url: '../classify2/classify2',
+    })
 
   },
-  goliangxun:function(){
+  gofushi:function(){
+    wx.navigateTo({
+      url: '../fushi/fushi',
+    })
+    // wx.showToast({
+    //   title: '暂无商品！',
+    //   icon: 'loading'
+    // })
+  },
+  goliangxun: function() {
     wx.navigateTo({
       url: '../ricemessage/ricemessage',
+    })
+  },
+  gotiaowei:function(){
+    wx.showToast({
+      title: '暂无商品！',
+      icon: 'loading'
     })
   }
 })

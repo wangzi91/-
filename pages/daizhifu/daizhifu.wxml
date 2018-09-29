@@ -1,30 +1,39 @@
 <block wx:for='{{daizhifu}}'>
-    <view bindtap='gounpay'>
-      <view class='order-all'>
-        <view class='order-all-t1'>
-          <view>下单时间：{{item.time}}</view>
-          <view class='red'>等待买家付款</view>
-        </view>
-        <view class='qrdd'>
-          <view class='qrdd-left'>
-            <image src='{{item.picture}}'></image>
-            <view class='qrdd-tit'>
-              <view class='qedd-tit-tit1'>{{item.name}}</view>
-              <view class='qrdd-price'>￥{{item.price}}</view>
-            </view>
-          </view>
-          <view class='qrdd-num'>x{{item.purchase_number}}</view>
-        </view>
+  <view bindtap='gounpay'>
+    <view class='order-all'>
+      <view class='order-all-t1'>
+        <view>下单时间：{{item.time}}</view>
+        <view class='red'>等待买家付款</view>
       </view>
-      <view class="yingfu">
-        <view class='yingfu-left'>
-          <view>应付：</view>
-          <view class='red'>￥{{item.amount_payable}}</view>
+      <view class='qrdd'>
+        <view class='qrdd-left'>
+          <image src='{{item.picture}}'></image>
+          <view class='qrdd-tit'>
+            <view class='qedd-tit-tit1'>{{item.name}}</view>
+            <view class='qrdd-price'>￥{{item.price}}</view>
+          </view>
         </view>
-        <view class='yingfu-right'>
-          <view class='quxiaodingdan' data-id='{{item.id}}' catchtap='quxiaodingdan'>取消订单</view>
-          <view class='quzhifu' style='margin-left:15rpx'>去支付</view>
-        </view>
+        <view class='qrdd-num'>x{{item.purchase_number}}</view>
       </view>
     </view>
-  </block>
+    <view class="yingfu">
+      <view class='yingfu-left'>
+        <view>应付：</view>
+        <view class='red'>￥{{item.amount_payable}}</view>
+      </view>
+      <view class='yingfu-right'>
+        <view class='quxiaodingdan' data-id='{{item.id}}' catchtap='quxiaodingdan'>取消订单</view>
+        <view class='quzhifu' style='margin-left:15rpx' data-id='{{item.id}}' bindtap='showpay'>去支付</view>
+      </view>
+    </view>
+  </view>
+</block>
+<view class='zezao' wx:if='{{showpay}}'>
+  <view class='zezaocom'>
+    <view class='t1'>输入支付密码</view>
+    <view class='t2'><input type='password' bindinput='zhifumima'></input></view>
+    <view class='sub'>
+      <view class='quxiao' bindtap='quxiao'>取消</view><view class='queding' bindtap='asd'>确定</view>
+    </view> 
+  </view>
+</view>

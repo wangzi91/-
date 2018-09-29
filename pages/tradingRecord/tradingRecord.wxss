@@ -14,7 +14,7 @@ border-bottom: 1rpx solid #e0e0e0
 color:#999999;
 }
 .time{
-  margin-left: 18rpx
+
 }
 .title{
   font-size:26rpx;
@@ -34,4 +34,7 @@ color:#26b13c;
 }
 .com .jyjl:last-child{
   border: none
+}
+.t1{
+  display: flex
 }

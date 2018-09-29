@@ -21,7 +21,7 @@
 <view class='selectsku' bindtap='showModal'>
   <view class='ssku'>
     <view class='spec'>规格</view>
-    <view class='seleattr'>选择商品属性</view>
+    <view class='seleattr'>选择商品产地</view>
   </view>
   <view class='more'>
     <image src='../../images/right_arrow.png'></image>
@@ -105,6 +105,8 @@
     
     </view>
   </view>
+</view>
+<view class='kong'>
 </view>
 
 <view class='dibu'>

@@ -13,6 +13,20 @@ Page({
   },
 
   onLoad: function(options) {
+    //     var url = decodeURIComponent(options.q)
+    //     var loc = url.substring(url.lastIndexOf('=') + 1, url.length);
+    //     console.log('传递值为' + loc)
+    // this.setData({
+    //   wxcode:loc
+    // })
+
+    var code = options.TDChannelId
+console.log('传过来code'+  code)
+    this.setData({
+      code2: code
+    })
+
+    console.log(this.data.code)
     wx.getSetting({
       success: function(res) {
         if (res.authSetting['scope.userInfo']) {
@@ -22,29 +36,29 @@ Page({
         }
       }
     })
-    var phone = wx.getSystemInfoSync(); //调用方法获取机型
-    console.log(phone)
-    if (phone.platform == 'ios') {
-      this.setData({
-        detail: true
-      })
-    } else if (phone.platform == 'android') {
-      this.setData({
-        detail: false
-      })
+    // var phone = wx.getSystemInfoSync(); //调用方法获取机型
+    // console.log(phone)
+    // if (phone.platform == 'ios') {
+    //   this.setData({
+    //     detail: true
+    //   })
+    // } else if (phone.platform == 'android') {
+    //   this.setData({
+    //     detail: false
+    //   })
 
-    }
+    // }
   },
   phonevalue: function(e) {
     var phone = e.detail.value
-    console.log(phone)
+ 
     this.setData({
       phonenum: phone
     })
   },
   yzmvalue: function(e) {
     var yzm = e.detail.value
-    console.log(yzm)
+   
     this.setData({
       yzm: yzm
     })
@@ -67,8 +81,9 @@ Page({
       }
     }, 1000)
   },
-  getVerificationCode() {
+  getcode() {
     var that = this
+    var phone = wx.getSystemInfoSync()
     if (this.data.phonenum == '') {
       wx.showToast({
         title: '请填写手机号',
@@ -77,8 +92,6 @@ Page({
       })
       return false
     }
-
-
     wx.request({
       url: 'https://sale.heliangwang.com/mp/changePhone.php',
       data: {
@@ -91,39 +104,63 @@ Page({
         'content-type': 'application/x-www-form-urlencoded'
       },
       success: function(res) {
-        var jsonStr = res.data;
-        jsonStr = jsonStr.replace(" ", "");
-        if (typeof jsonStr != 'object') {
-          jsonStr = jsonStr.replace(/\ufeff/g, ""); //重点
-          var jj = JSON.parse(jsonStr);
-          res.data = jj;
+
+        // var jsonStr = res.data;
+        // jsonStr = jsonStr.replace(" "," ");
+        // if (typeof jsonStr != 'object') {
+        //   jsonStr = jsonStr.replace(/\ufeff/g, "");
+        //   var jj = JSON.parse(jsonStr);
+        //   res.data = jj
+        // }
+
+        if (phone.platform == 'ios') {
+          if (res.data.code == 0) {
+            wx.showToast({
+              title: res.data.msg,
+              duration: 1500
+            })
+
+          } else {
+            wx.showToast({
+              title: res.data.msg,
+              duration: 1500
+            })
+            return false
+          }
         }
-        console.log(jj)
-        if (jj.code == 0) {
+        if (phone.platform == 'android') {
+          var jsonStr = res.data;
+          jsonStr = jsonStr.replace(" ", " ");
+          if (typeof jsonStr != 'object') {
+            jsonStr = jsonStr.replace(/\ufeff/g, "");
+            var jj = JSON.parse(jsonStr);
+            res.data = jj
+          }
+        }
+   
+        if (res.data.code == 0) {
           wx.showToast({
-            title: jj.msg,
-            time: 1500
+            title: res.data.msg,
+            duration: 1500
           })
-          that.getCode();
-          that.setData({
-            disabled: true,
-            yzmid: jj.codeid
-          })
+
         } else {
           wx.showToast({
-            title: jj.msg,
-            icon: 'loading',
-            time: 1500
+            title: res.data.msg,
+            duration: 1500
           })
           return false
         }
+        that.getCode();
+        that.setData({
+          disabled: true
+        })
       }
+
     })
 
   },
   bindGetUserInfo: function(e) {
-
-
     if (this.data.phonenum == '') {
       wx.showToast({
         title: '请填写手机号',
@@ -154,7 +191,7 @@ Page({
     wx.login({
       success: function(res) {
         var _code = res.code;
-        console.log(_code)
+       
         if (_code) {
           wx.request({
             url: 'https://sale.heliangwang.com/mp/getUserinfo.php',
@@ -165,14 +202,14 @@ Page({
               headimg: that.data.image,
               phone: that.data.phonenum,
               phonecode: that.data.yzm,
-              codeid: that.data.yzmid
+              superior: that.data.code2
             },
             method: 'POST',
             header: {
               'content-type': 'application/x-www-form-urlencoded'
             },
             success: function(res) {
-              console.log(res)
+              
               if (res.data.code == 0) {
                 console.log(res.data.msg)
                 wx.showToast({
@@ -192,7 +229,7 @@ Page({
                 wx.switchTab({
                   url: '../user/user',
                 })
-              }else{
+              } else {
                 wx.showToast({
                   title: res.data.msg,
                   icon: 'loading',

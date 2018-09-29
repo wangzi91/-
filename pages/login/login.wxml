@@ -1,27 +1,19 @@
-<!--pages/login/login.wxml-->
-<!-- <view class='login'>
-  <view class='phonenum'>手机号</view>
-  <input class='in-phonenum' type='text' placeholder='输入手机号' placeholder-class="phcolor"></input>
-</view>
-<view class='login'>
-  <view class='phonenum pwd'>密码</view>
-  <input class='in-phonenum' type='password' placeholder='输入密码' placeholder-class="phcolor"></input>
-</view> -->
+
 <view class='t4'>
   <input placeholder='输入手机号' placeholder-class="place-holder" type='number' bindinput='phonevalue'></input>
 </view>
 <view class='t3'>
-  <input placeholder='短信验证码' style="width:{{detail ? '167rpx':'180rpx'}}" placeholder-class="place-holder" type='number' bindinput='yzmvalue'></input>
-  <button bindtap="getVerificationCode" disabled='{{disabled}}'>{{time}}</button>
+  <input placeholder='短信验证码'  placeholder-class="place-holder" type='number' bindinput='yzmvalue'></input>
+  <button bindtap="getcode" disabled='{{disabled}}'>{{time}}</button>
 </view>
 <button open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo" class=' login-btn2'><image src='../../images/weixin.png'></image>
   授权登陆/注册</button>
 
-<!-- <view class='login-btn' bindtap='godenglu'>登录</view> -->
-
 
 <view class='fast'>
-  <!-- <view class='forget' bindtap='gochangepwd'>忘记密码?</view> -->
+
   <view class='wxlogin' bindtap='goindex'>返回首页</view>
-  <!-- <view class='wxlogin' bindtap='goquickRegister'>快速注册</view> -->
+
 </view>
+
+<!-- style="width:{{detail ? '167rpx':'180rpx'}}" -->

@@ -12,10 +12,10 @@
 .index-hotsale-con {
   width: 343rpx;
   float: left;
-  height: 466rpx;
+  height: 491rpx;
   /* background-color: yellow; */
   margin-left: 22rpx;
-  margin-bottom: 40rpx;
+  margin-bottom: 12rpx;
 }
 
 .index-hotsale-img {

@@ -57,3 +57,36 @@
  color: #9D9D9D
   
 }
+.cs_button {
+ 
+  border: 0px;
+
+height: 70rpx;
+background: white;
+  position: absolute;
+right: 15rpx;
+display: flex;
+align-items: center
+}
+
+.cs_button:after {
+  border: 0px;
+}
+.wlxx{
+  background: white;
+  height: 700rpx;
+  margin-top: 10rpx;
+  padding-left: 30rpx;
+  padding-right: 30rpx
+}
+.wlxx-com{
+font-size: 26rpx;
+margin-bottom: 10rpx
+}
+.wlxx .wlxx-com:first-child{
+  color: #f8aa09
+}
+.wlsj{
+  color: #9D9D9D;
+  font-size: 24rpx
+}

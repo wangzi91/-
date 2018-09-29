@@ -42,12 +42,39 @@ color: white;
   line-height: 47rpx;
   text-align: center;
 }
+.NOquzhifu{
+background:gray;
+border-radius:100rpx;
+width:145rpx;
+height:47rpx;
+color: white;
+  line-height: 47rpx;
+  text-align: center;
+}
+.kanwuliu{
+background:#26b13c;
+border-radius:100rpx;
+width:145rpx;
+height:47rpx;
+color: white;
+  line-height: 47rpx;
+  text-align: center;
+}
 .green{
   color:#26b13c;
 }
 .arrow{
   width: 16rpx;
 height: 25rpx;
+/* position: absolute;
+top: 50%;
+transform: translate(-50%);
+right: 0 */
+
+}
+.arrow2{
+  width: 25rpx;
+height: 16rpx;
 /* position: absolute;
 top: 50%;
 transform: translate(-50%);

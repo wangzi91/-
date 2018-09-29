@@ -10,7 +10,8 @@ Page({
     jisuanshow: true,
     showedit: false,
     hideedit: true,
-    total: ''
+    total: '',
+    uid2:''
   },
   editdel: function() {
     this.setData({
@@ -315,26 +316,6 @@ Page({
   },
 
   onLoad: function(e) {
-
-
-
-    // if (!cartItems) {
-    //   this.setData({
-    //     showcart: true
-    //   })
-    // }
-    // var that = this;
-    // //common是自己写的公共JS方法，可忽略
-    // // common.sys_main(app, that, e);
-    // for (var i = 0; i < 10; i++) {
-    //   this.data.cartItems.push({
-    //     content: i + " 向左滑动删除哦,向左滑动删除哦,向左滑动删除哦,向左滑动删除哦,向左滑动删除哦",
-    //     isTouchMove: false //默认隐藏删除
-    //   })
-    // }
-    // this.setData({
-    //   cartItems: this.data.cartItems
-    // });
   },
   //手指触摸动作开始 记录起点X坐标
   touchstart: function(e) {
@@ -535,6 +516,14 @@ Page({
   //   })
   // },
   goorder: function() {
+    if(this.data.uid2 == ''){
+      wx.showToast({
+        title: "请登录！",
+        duration: 1000,
+        icon: "loading"
+      })
+      return false
+    }
     var that = this;
     //获取购物车列表
     var cartItems = this.data.cartItems

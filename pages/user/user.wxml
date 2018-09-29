@@ -28,6 +28,9 @@
       <image src='../../images/right_arrow.png' class='arrow'></image>
     </view>
   </view>
+
+
+
   <view class='zhifu'>
     <view bindtap='godaizhifu'>
       <image src='../../images/pay.png' class='pay'></image>
@@ -47,15 +50,32 @@
     </view>
   </view>
 </view>
+<view class='myquanyi' bindtap='showmyquanyi'>
+  <view class='list1'>
+    <view>我的权益</view>
+  </view>
+  <view class='list2'>
+    <image src='../../images/right_down.png' class='arrow2'></image>
+  </view>
+</view>
+<view class='myquanyi2' hidden="{{showquanyi}}">
+  <block wx:for="{{quanyiimg}}">
+    <image src='{{item.icon}}' class='quanyi-logo'></image>
+  </block>
+
+</view>
 
 <view class='userlist'>
+
+
+
   <view class='list' bindtap='gomyaccount'>
     <view class='list1'>
       <image src='../../images/account.png' class='zhanghu'></image>
       <view>我的账户</view>
     </view>
     <view class='list2'>
-      <view class='yue'>余额：{{balance}}</view>
+      <view class='yue'>余额：{{yue}}</view>
       <image src='../../images/right_arrow.png' class='arrow'></image>
     </view>
   </view>
@@ -79,7 +99,7 @@
       <image src='../../images/right_arrow.png' class='arrow'></image>
     </view>
   </view>
-  <view class='list' bindtap='gofenxiao'>
+  <!-- <view class='list' bindtap='gofenxiao'>
     <view class='list1'>
       <image src='../../images/Sales.png' class='zhanghu'></image>
       <view>我的分销</view>
@@ -88,7 +108,7 @@
 
       <image src='../../images/right_arrow.png' class='arrow'></image>
     </view>
-  </view>
+  </view> -->
   <view class='list' bindtap='gofankui'>
     <view class='list1'>
       <image src='../../images/opinion.png' class='zhanghu'></image>
@@ -98,7 +118,7 @@
       <image src='../../images/right_arrow.png' class='arrow'></image>
     </view>
   </view>
-  <view class='list' bindtap='show'>
+  <view class='list' bindtap='gofoot'>
     <view class='list1'>
       <image src='../../images/footprint.png' class='zhanghu'></image>
       <view>我的足迹</view>

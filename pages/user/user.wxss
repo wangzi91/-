@@ -265,7 +265,7 @@
 
 .userlist {
   background: white;
-  margin-top: 124rpx;
+  margin-top: 17rpx;
   font-size: 26rpx;
 }
 
@@ -307,4 +307,39 @@ align-items: center
   font-size:26rpx;
   margin-left: 20rpx
 
+}
+.myquanyi{
+  width:673rpx;
+
+margin: 0 auto;
+border-radius: 8rpx;
+margin-top: 116rpx;
+display:flex;
+flex-direction:row;
+justify-content:space-between;
+align-items:center;
+height:74rpx;
+font-size: 26rpx;
+background: white;
+padding-left: 20rpx;
+padding-right: 20rpx
+
+}
+.myquanyi2{
+  width:710rpx;
+height:65rpx;
+/* background:yellow; */
+margin: 0 auto;
+border-radius: 8rpx;
+display: flex;
+align-items: center;
+padding-left: 20rpx;
+}
+/* page{
+  background: red
+} */
+.quanyi-logo{
+  width: 60rpx;
+  height: 60rpx;
+  margin-right: 20rpx;
 }

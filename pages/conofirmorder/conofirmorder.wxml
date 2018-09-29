@@ -75,22 +75,35 @@
     </view>
   </view>
 </view>
+
 <view class='qedd-jifen' wx:if='{{showjifen}}'>
-可用积分为：1233
+  <view>本次可使用的积分:{{jifen}}</view>
+  <view>折现金额:{{zexianjine}}</view>
 </view>
 <view class='qrdd-ly'>
   <view class='qrdd-fkfs-tit-2' style='margin-right:20rpx'>买家留言</view>
-  <textarea style="margin-top:{{detail ? '8rpx':'24rpx'}}" placeholder="选填：填写内容已和卖家协商确认" placeholder-class='placeholder' />
+  <textarea style="margin-top:{{detail ? '8rpx':'24rpx'}}" value='{{con}}' bindinput='bindWordLimit' placeholder="填写内容已和卖家协商确认" placeholder-class='placeholder' wx:if='{{showtear}}' />
 </view>
+
+
 
 <view class="cart-bottom">
   <view class='cart-pay'>
-    <text class='cart_pay' data-id="{{item.id}}" bindtap='asd'>结算</text>
+    <text class='cart_pay'  bindtap='gozezhao'>结算</text>
   </view>
   <view class='cart-sum'>
     <text class='cart_sum'>
       <text class='sum_text'>合计：</text>
     <text class='sum_color'>￥{{total}}</text>
     </text>
+  </view>
+</view>
+<view class='zezao' wx:if='{{showpay}}'>
+  <view class='zezaocom'>
+    <view class='t1'>输入支付密码</view>
+    <view class='t2'><input type='password' bindinput='zhifumima'></input></view>
+    <view class='sub'>
+      <view class='quxiao' bindtap='quxiao'>取消</view><view class='queding' bindtap='asd'>确定</view>
+    </view> 
   </view>
 </view>

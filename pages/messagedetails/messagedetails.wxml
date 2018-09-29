@@ -1,10 +1,10 @@
 <!--pages/messagedetails/messagedetails.wxml-->
 
-  <view class='title'>
+  <!-- <view class='title'>
     {{messdetails.Content_result.title}}
-  </view>
-   <view class='img' wx:for='{{messagedetailImg}}'>
-    <image src='{{item.content_picture}}'></image>
-  </view>
-  <view class='cons'> {{messdetails.Content_result.content}}</view> 
+  </view> -->
+   <block wx:for='{{messagedetailImg}}'>
+    <image  class='img' src='{{item.content_picture}}'></image>
+  </block>
+  <!-- <view class='cons'> {{messdetails.Content_result.content}}</view>  -->
  

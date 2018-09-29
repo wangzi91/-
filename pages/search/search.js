@@ -20,6 +20,24 @@ Page({
     wx.navigateTo({
       url: '../detail/detail?id='+id,
     })
+    wx.request({
+      url: 'https://sale.heliangwang.com/mp/getMine.php',
+      data: {
+        'function': 'getMineFooterAdd',
+        id: id,
+        uid: this.data.uid
+      },
+      header: {
+        'content-type': 'application/x-www-form-urlencoded'
+      },
+      method: 'POST',
+      success: function (res) {
+        console.log(res)
+        // that.setData({
+        //   xiaomi3: res.data
+        // })
+      }
+    })
   },
   //搜索
   search: function() {
@@ -121,8 +139,10 @@ Page({
   },
   onShow: function() {
     var newsearch = wx.getStorageSync('recent')
+    var uid = wx.getStorageSync('userid')
     this.setData({
-      zuijin: newsearch
+      zuijin: newsearch,
+      uid: uid
     })
   },
   onLoad: function() {

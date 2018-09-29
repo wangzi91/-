@@ -22,7 +22,8 @@ Page({
     pinglun: '',
     tupian: '',
     sku: '',
-    value: 1
+    value: 1,
+    userid:''
   },
   boxtwo: function(e) {
     var index = parseInt(e.currentTarget.dataset.index)
@@ -65,11 +66,13 @@ Page({
       chandi: chandi
     })
   },
+  //收藏
   gocollect: function() {
     var that = this
+    console.log(this.data.cartitems)
     var collect = wx.getStorageSync("collect") || []
     var exist = collect.find(function(el) {
-      return el.id == that.data.goods.id
+      return el.id == that.data.cartitems.id
     })
     if (exist) {
       wx.showToast({
@@ -78,11 +81,11 @@ Page({
       })
     } else {
       collect.push({
-        id: this.data.goods.id,
-        title: this.data.goods.title1,
-        image: this.data.goods.img,
-        price: this.data.goods.price,
-        value: this.data.goods.value,
+        id: this.data.cartitems.id,
+        title: this.data.cartitems.title1,
+        image: this.data.cartitems.picture,
+        price: this.data.cartitems.price,
+        // value: this.data.cartitems.value,
         selected: true,
       })
       wx.showToast({
@@ -292,6 +295,14 @@ Page({
 
   gobuy2: function(e) {
     var that = this
+    if (this.data.userid == ''){
+      wx.showToast({
+        title: '请登录！',
+        duration: 1500,
+        icon: 'loading'
+      })
+      return false
+    }
     if (!this.data.chandi) {
       wx.showToast({
         title: '请选择产地！',

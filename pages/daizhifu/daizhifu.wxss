@@ -142,5 +142,50 @@ padding-right: 30rpx
 .disblo{
   display: block
 }
-
+.zezaocom{
+  background:#ffffff;
+border-radius:12rpx;
+width:468rpx;
+height:306rpx;
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%,-50%);
+display: flex;
+flex-direction: column;
+align-items: center;
+z-index: 11
+}
+.t1{
+  font-size:36rpx;
+color:#26b13c;
+margin-top: 19rpx;
+margin-bottom: 47rpx
+}
+.t2{
+  font-size:30rpx;
+color:#202020;
+border: 1rpx solid #e0e0e0;
+border-radius: 8rpx;
+text-align: center
+}
+.sub{
+  font-size: 26rpx;
+  display: flex;
+  justify-content: space-between;
+margin-top: 60rpx
+}
+.quxiao{
+  padding: 8rpx 35rpx;
+  border:  1rpx solid #e0e0e0;
+  border-radius: 8rpx;
+  margin-right: 10rpx
+}
+.queding{
+ padding: 8rpx 35rpx;
+  border-radius: 8rpx;
+  background: #f8aa09;
+  color: white;
+  margin-left: 68rpx
+}
 

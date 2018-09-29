@@ -12,7 +12,24 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    var that = this
+    wx.request({
+      url: 'https://sale.heliangwang.com/mp/getImage.php',
+      data: {
+        'function': 'getAboutOur',
+       
+      },
+      header: {
+        'content-type': 'application/x-www-form-urlencoded'
+      },
+      method: 'POST',
+      success: function (res) {
+        that.setData({
+          con: res.data
+        })
+        console.log(res.data)
+      }
+    })
   },
 
   /**

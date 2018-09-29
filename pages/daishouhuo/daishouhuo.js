@@ -7,7 +7,47 @@ Page({
   data: {
 
   },
-
+  goqrsh: function (e) {
+    var id = e.currentTarget.dataset.id;
+    console.log(id)
+    wx.showModal({
+      title: '提示',
+      content: '是否确认收货？',
+      success: function (res) {
+        if (res.confirm) {
+          console.log('用户点击确定')
+          // wx.navigateTo({
+          //   url: '../waitsh/waitsh?id='+ id,
+          // })
+          wx.request({
+            url: 'https://sale.heliangwang.com/mp/getOrder.php',
+            data: {
+              'function': 'getOrderConfirm',
+              id: id
+            },
+            header: {
+              'content-type': 'application/x-www-form-urlencoded'
+            },
+            method: 'POST',
+            success: function (res) {
+              console.log(res)
+              if (res.data.code == 0) {
+                wx.navigateTo({
+                  url: '../waitsh/waitsh?id=' + id,
+                })
+              }
+              // that.setData({
+              //   daizhifu: res.data
+              // })
+              // console.log(res.data)
+            }
+          })
+        } else if (res.cancel) {
+          console.log('用户点击取消')
+        }
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -37,7 +77,15 @@ Page({
       }
     })
   },
-  
+  gowuliu: function (e) {
+    console.log(e)
+    var olderNumber = e.currentTarget.dataset.dh
+    var id = e.currentTarget.dataset.id
+    var wlgs = e.currentTarget.dataset.wlgs
+    wx.navigateTo({
+      url: '../Logistics/Logistics?olderNumber=' + olderNumber + '&id=' + id + '&wlgs=' + wlgs
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

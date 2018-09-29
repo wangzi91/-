@@ -144,3 +144,7 @@ button::after {
   font-size: 24rpx;
   color: #999;
 }
+.t3 input {
+  width: 200rpx;
+
+}

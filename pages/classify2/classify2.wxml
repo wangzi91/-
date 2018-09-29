@@ -25,7 +25,7 @@
 
           <view class="classify-item">
             <block wx:for="{{item.children}}">
-                <navigator class="item" url="../detail/detail?id={{item.id}}">
+                <navigator class="item" url="../detail/detail?id={{item.id}}" >
                   <image src="{{item.logo}}" class="logo"></image>
                   <view class="name">{{item.desc}}</view>
                 </navigator>

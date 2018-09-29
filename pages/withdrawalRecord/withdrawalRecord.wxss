@@ -1,0 +1,33 @@
+/* pages/withdrawalRecord/withdrawalRecord.wxss */
+
+.record {
+  display: flex;
+  height: 78rpx;
+  background: white;
+  font-size: 26rpx;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+  border-bottom: 1rpx #e0e0e0 solid;
+}
+
+.recordTime {
+  color: #a9a9a9;
+  font-size: 24rpx;
+}
+
+.record-main .record:first-child {
+  margin-top: 20rpx;
+}
+.record-main .record:last-child {
+  border: none
+}
+
+
+.record-center {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}

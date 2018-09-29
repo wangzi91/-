@@ -1,34 +1,38 @@
 {
   "pages": [
-        "pages/conofirmorder/conofirmorder",
-        "pages/classify2/classify2",
-      "pages/index/index",
-
-      
-       
-        "pages/carts/carts",
+        "pages/index/index",
+          "pages/user/user",
+    "pages/withdrawalRecord/withdrawalRecord",
+      "pages/myaccount/myaccount",
 
 
+ 
+    "pages/myorder/myorder",
+    "pages/payOldersucc/payOldersucc",
+    "pages/tradesucc/tradesucc",
+    "pages/waitsh/waitsh",
+    "pages/unpaid/unpaid",
+    "pages/daishouhuo/daishouhuo",
+    "pages/Logistics/Logistics",
+    "pages/footMark/footMark",
+    "pages/carts/carts",
+    "pages/collect/collect",
+    "pages/login/login",
+    "pages/tradingRecord/tradingRecord",
+    "pages/fushi/fushi",
+    "pages/zaliang/zaliang",
+    "pages/ricemain/ricemain",
+    "pages/conofirmorder/conofirmorder",
+    "pages/classify2/classify2",
     "pages/payPassword/payPassword",
-    "pages/user/user",
     "pages/evaluate/evaluate",
     "pages/daipingjia/daipingjia",
     "pages/yiwancheng/yiwancheng",
-    "pages/daishouhuo/daishouhuo",
     "pages/daizhifu/daizhifu",
-    "pages/myorder/myorder",
-    "pages/login/login",
-
     "pages/riceclassify/riceclassify",
-    "pages/ricemain/ricemain",
     "pages/search/search",
-    "pages/Logistics/Logistics",
-    "pages/tradesucc/tradesucc",
-    "pages/unpaid/unpaid",
-
     "pages/detail/detail",
     "pages/tradingDetails/tradingDetails",
-    "pages/tradingRecord/tradingRecord",
     "pages/changePassword/changePassword",
     "pages/resetPassword/resetPassword",
     "pages/about/about",
@@ -38,9 +42,8 @@
     "pages/fenxiao/fenxiao",
     "pages/feedback/feedback",
     "pages/withdraw/withdraw",
-    "pages/myaccount/myaccount",
+  
     "pages/recharge/recharge",
-    "pages/collect/collect",
     "pages/classify/classify",
     "pages/quit/quit",
     "pages/ricemessage/ricemessage",

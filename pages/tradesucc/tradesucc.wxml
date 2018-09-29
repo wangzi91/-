@@ -21,7 +21,7 @@
     <view class='adde'>收货地址：{{addr.provinceName}} {{addr.cityName}} {{addr.countyName}} {{addr.detailInfo}}</view>
   </view>
 </view>
-<block wx:for="{{selarr}}">
+<!-- <block wx:for="{{selarr}}">
   <view class='qrdd'>
     <view class='qrdd-left'>
       <image src='{{item.image}}' class='qrdd-img'></image>
@@ -36,7 +36,7 @@
     <view>合计实付款</view>
     <view>￥201.00</view>
   </view>
-</block>
+</block> -->
 
 
 <view class='lxkf-mine'>
@@ -45,7 +45,7 @@
 </view>
 <view class='liuyan'>
   <view>买家留言</view>
-  <view>规格不要错了，尽快发货</view>
+  <view>{{msg}}</view>
 </view>
 
 <view class='guess'>
@@ -54,23 +54,16 @@
   <image src='../../images/r.png' class='l'></image>
 </view>
 <view class='index-hotsale'>
-  <view class='index-hotsale-con' bindtap='godetail'>
+<block wx:for='{{guess}}'>
+  <view class='index-hotsale-con' data-id='{{item.id}}' bindtap='godetail'>
     <view class='index-hotsale-img'>
-      <image src='../../images/t5.png'></image>
+      <image src='{{item.picture}}'></image>
     </view>
-    <view class='index-hotsale-tit'>产品名称产品名称产品名称产品名称产品名称产品名称</view>
-    <view class='index-hotsale-tit2'>简单描述简单描述</view>
-    <view class='index-hotsale-pri'>￥32.90</view>
+    <view class='index-hotsale-tit'>{{item.name}}</view>
+    <view class='index-hotsale-tit2'>{{item.brief_description}}</view>
+    <view class='index-hotsale-pri'>￥{{item.price}}</view>
   </view>
-  <view class='index-hotsale-con' bindtap='godetail'>
-    <view class='index-hotsale-img'>
-      <image src='../../images/t5.png'></image>
-    </view>
-    <view class='index-hotsale-tit'>产品名称产品名称产品名称产品名称产品名称产品名称</view>
-    <view class='index-hotsale-tit2'>简单描述简单描述</view>
-    <view class='index-hotsale-pri'>￥32.90</view>
-  </view>
-
+</block>
 </view>
 <view >
   <view class='em'></view>
@@ -78,6 +71,6 @@
 </view>
 
 
-<view class='qupingjia'>
+<!-- <view class='qupingjia'>
   <view class='qpj-1' bindtap='gopingjia'>去评价</view>
-</view>
+</view> -->

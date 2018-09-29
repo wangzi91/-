@@ -7,11 +7,107 @@ Page({
     daizhifu: [],
     daishouhuo: [],
     daipingjia: [],
-    yiwancheng: []
+    yiwancheng: [],
+    showpay: false
     // none: '',
     // block: ' ',
     // none1:'',
     // block1:''
+  },
+  //获取支付密码
+  zhifumima: function(e) {
+    this.setData({
+      zfmm: e.detail.value
+    })
+    console.log(this.data.zfmm)
+  },
+  asd: function() {
+    var that = this
+    wx.request({
+      url: 'https://sale.heliangwang.com/mp/getOrder.php',
+      data: {
+        'function': 'getOrderPay',
+        id: that.data.id,
+        uid: that.data.uid,
+        pwd: that.data.zfmm
+      },
+      header: {
+        'content-type': 'application/x-www-form-urlencoded'
+      },
+      method: 'POST',
+      success: function(res) {
+        console.log(res.data)
+        if (res.data.code == 0) {
+          that.setData({
+            showpay: false,
+          })
+          wx.navigateTo({
+            url: '../payOldersucc/payOldersucc?id=' + that.data.id,
+          })
+        } else {
+          wx.showToast({
+            title: res.data.msg,
+            duration: 1500,
+            icon: 'loading'
+          })
+          return false
+        }
+      }
+    })
+  },
+  quxiao: function() {
+    this.setData({
+      showpay: false
+    })
+  },
+  showpay: function(e) {
+    var id = e.currentTarget.dataset.id;
+    console.log(id)
+    this.setData({
+      showpay: true,
+      id: id
+    })
+  },
+  goqrsh: function(e) {
+    var id = e.currentTarget.dataset.id;
+    console.log(id)
+    wx.showModal({
+      title: '提示',
+      content: '是否确认收货？',
+      success: function(res) {
+        if (res.confirm) {
+          console.log('用户点击确定')
+          // wx.navigateTo({
+          //   url: '../waitsh/waitsh?id='+ id,
+          // })
+          wx.request({
+            url: 'https://sale.heliangwang.com/mp/getOrder.php',
+            data: {
+              'function': 'getOrderConfirm',
+              id: id
+            },
+            header: {
+              'content-type': 'application/x-www-form-urlencoded'
+            },
+            method: 'POST',
+            success: function(res) {
+              console.log(res)
+              if (res.data.code == 0) {
+                wx.navigateTo({
+                  url: '../waitsh/waitsh?id=' + id,
+                })
+              }
+              // that.setData({
+              //   daizhifu: res.data
+              // })
+              // console.log(res.data)
+            }
+          })
+        } else if (res.cancel) {
+          console.log('用户点击取消')
+        }
+      }
+    })
   },
   navbarTap: function(e) {
     this.setData({
@@ -351,5 +447,14 @@ Page({
       }
     })
 
+  },
+  gowuliu: function(e) {
+    console.log(e)
+    var olderNumber = e.currentTarget.dataset.dh
+    var id = e.currentTarget.dataset.id
+    var wlgs = e.currentTarget.dataset.wlgs
+    wx.navigateTo({
+      url: '../Logistics/Logistics?olderNumber=' + olderNumber + '&id=' + id + '&wlgs=' + wlgs
+    })
   }
 })

@@ -33,12 +33,12 @@ Page({
       },
       method: 'POST',
       success: function (res) {
-        console.log(res)
+        console.log(res.data.ContentImg_result)
         // that.setData({
         //   imgUrls: res.data
         // })
         that.setData({
-          messdetails: res.data,
+          // messdetails: res.data,
           messagedetailImg: res.data.ContentImg_result
         })
       }

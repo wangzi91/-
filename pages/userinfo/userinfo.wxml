@@ -1,7 +1,7 @@
 <view class='user'>
-  <image src='{{images}}' class='user-img'></image>
+  <image src='{{userinfo.image}}' class='user-img'></image>
   <view class='user-info'>
-    <view>{{nickname}}</view>
+    <view>{{userinfo.nickName}}</view>
     <view>{{phone}}</view>
   </view>
 </view>
@@ -14,7 +14,7 @@
     <image src='../../images/right_arrow.png' class='arrow'></image>
   </view>
 </view>
-
+<!-- 
 <view class='list'  bindtap='gopaypwd'>
   <view class='list1'>
     <view>添加支付密码</view>
@@ -22,7 +22,7 @@
   <view class='list2'>
     <image src='../../images/right_arrow.png' class='arrow'></image>
   </view>
-</view>
+</view> -->
 
 <view class='list' style='border:none' bindtap='goabout'>
   <view class='list1'>

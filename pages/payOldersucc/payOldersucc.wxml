@@ -1,0 +1,76 @@
+<!--pages/tradesucc/tradesucc.wxml-->
+
+<view class='jycg-title'>
+  <view>交易成功</view>
+  <image src='../../images/jiaoyichenggong.png'></image>
+</view>
+
+<view class='jycg-wlxx'>
+  <view class='jycg-wlxx-t1'>物流信息</view>
+  <view class='jycg-wlxx-t2'>等待卖家发货</view>
+</view>
+<view class='chooseaddr'>
+  <view class='title'>
+    <view class='shouhuoren'>收货人：{{addr.name}}</view>
+    <view class='phone'>{{addr.phone_number}}</view>
+  </view>
+  <view class='addrs'>
+    <view class='dingwei'>
+      <image src='../../images/dingwei.png' class='dingweiimg'></image>
+    </view>
+    <view class='adde'>收货地址：{{addr.address}}</view>
+  </view>
+</view>
+<!-- <block wx:for="{{selarr}}">
+  <view class='qrdd'>
+    <view class='qrdd-left'>
+      <image src='{{item.image}}' class='qrdd-img'></image>
+      <view class='qrdd-tit'>
+        <view class='qedd-tit-tit1'>{{item.title}}</view>
+        <view class='qrdd-price'>￥{{item.price}}</view>
+      </view>
+    </view>
+    <view class='qrdd-num'>x{{item.value}}</view>
+  </view>
+  <view class='qrdd-shifukuan'>
+    <view>合计实付款</view>
+    <view>￥201.00</view>
+  </view>
+</block> -->
+
+
+<view class='lxkf-mine'>
+  <image src='../../images/kefu.png' class='kefu'></image>
+  <view class='lxkf'>联系客服</view>
+</view>
+<!-- <view class='liuyan'>
+  <view>买家留言</view>
+  <view>{{msg}}</view>
+</view> -->
+
+<view class='guess'>
+  <image src='../../images/l.png' class='l'></image>
+  <view class='guess-tit'>猜你喜欢</view>
+  <image src='../../images/r.png' class='l'></image>
+</view>
+<view class='index-hotsale'>
+<block wx:for='{{guess}}'>
+  <view class='index-hotsale-con' data-id='{{item.id}}' bindtap='godetail'>
+    <view class='index-hotsale-img'>
+      <image src='{{item.picture}}'></image>
+    </view>
+    <view class='index-hotsale-tit'>{{item.name}}</view>
+    <view class='index-hotsale-tit2'>{{item.brief_description}}</view>
+    <view class='index-hotsale-pri'>￥{{item.price}}</view>
+  </view>
+</block>
+</view>
+<view >
+  <view class='em'></view>
+  <view class='em'></view>
+</view>
+
+
+<!-- <view class='qupingjia'>
+  <view class='qpj-1' bindtap='gopingjia'>去评价</view>
+</view> -->

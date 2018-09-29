@@ -63,7 +63,10 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    var uid = wx.getStorageSync('userid')
+    this.setData({
+      uid: uid
+    })
   },
 
   /**
@@ -98,7 +101,10 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-
+    return {
+      title: '壹粟一生商城',
+      path: '/index/index?id=123'
+    }
   },
 
   switchLeftTab: function (e) {
@@ -119,12 +125,26 @@ Page({
     })
   },
   godetail:function(e){
-    var id = e.target.dataset.id;
+    var id = e.target.dataset.idx;
     console.log(id)
+    // wx.navigateTo({
+    //   url: '../detail/detail?id=' + id
+    // })
 
-
-    wx.navigateTo({
-      url: '../detail/detail?id=' + id
+    wx.request({
+      url: 'https://sale.heliangwang.com/mp/getMine.php',
+      data: {
+        'function': 'getMineFooterAdd',
+        id: id,
+        uid: this.data.uid
+      },
+      header: {
+        'content-type': 'application/x-www-form-urlencoded'
+      },
+      method: 'POST',
+      success: function (res) {
+        console.log(res)
+      }
     })
   }
 

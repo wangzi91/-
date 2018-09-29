@@ -1,35 +1,5 @@
 Page({
   data: {
-    // cartItems: [{
-    //     "id": 1,
-    //     "title": "1鲜果礼盒鲜果礼盒鲜果礼盒鲜果礼盒鲜果礼盒鲜果礼盒",
-    //     "image": "../../images/t5.png",
-    //     "price": "108.98",
-    //     "value": 1,
-    //     "selected": true,
-    //     "color": "金色",
-    //     "storge": "64g"
-    //   }, {
-    //     "id": 321,
-    //     "title": "2鲜果礼盒鲜果礼盒鲜果礼盒鲜果礼盒鲜果礼盒鲜果礼盒",
-    //     "image": "../../images/t5.png",
-    //     "price": "108.98",
-    //     "value": "1",
-    //     "selected": true,
-    //     "color": "白色",
-    //     "storge": "32g"
-    //   },
-    //   {
-    //     "id": 3221,
-    //     "title": "3鲜果礼盒鲜果礼盒鲜果礼盒鲜果礼盒鲜果礼盒鲜果礼盒",
-    //     "image": "../../images/t5.png",
-    //     "price": "108.98",
-    //     "value": "1",
-    //     "selected": true,
-    //     "color": "白色",
-    //     "storge": "32g"
-    //   },
-    // ],
     startX: 0, //开始坐标
     startY: 0,
     showcart: true,
@@ -164,24 +134,6 @@ Page({
   },
 
   onLoad: function(e) {
-
-    // if (!cartItems) {
-    //   this.setData({
-    //     showcart: true
-    //   })
-    // }
-    // var that = this;
-    // //common是自己写的公共JS方法，可忽略
-    // // common.sys_main(app, that, e);
-    // for (var i = 0; i < 10; i++) {
-    //   this.data.cartItems.push({
-    //     content: i + " 向左滑动删除哦,向左滑动删除哦,向左滑动删除哦,向左滑动删除哦,向左滑动删除哦",
-    //     isTouchMove: false //默认隐藏删除
-    //   })
-    // }
-    // this.setData({
-    //   cartItems: this.data.cartItems
-    // });
   },
   //手指触摸动作开始 记录起点X坐标
   touchstart: function(e) {
@@ -268,8 +220,10 @@ Page({
   },
   onShow: function() {
     var cartItems = wx.getStorageSync("collect")
+    var uid = wx.getStorageSync('userid')
     this.setData({
       cartItems: cartItems,
+      uid: uid
     })
     var cartItems = this.data.cartItems
     if (cartItems.length >= 1) {
@@ -291,4 +245,26 @@ Page({
     })
     console.log(cartItems.length)
   },
+  godetail: function(e) {
+    var id = e.currentTarget.dataset.id
+    wx.navigateTo({
+      url: '../detail/detail?id=' + id,
+    })
+
+    wx.request({
+      url: 'https://sale.heliangwang.com/mp/getMine.php',
+      data: {
+        'function': 'getMineFooterAdd',
+        id: id,
+        uid: this.data.uid
+      },
+      header: {
+        'content-type': 'application/x-www-form-urlencoded'
+      },
+      method: 'POST',
+      success: function (res) {
+        console.log(res)
+      }
+    })
+  }
 })

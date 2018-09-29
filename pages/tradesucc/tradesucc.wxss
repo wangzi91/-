@@ -125,7 +125,7 @@ margin-bottom: 10rpx
 .index-hotsale-con {
   width: 346rpx;
   float: left;
-  height: 466rpx;
+  height: 510rpx;
   /* background-color: yellow; */
    margin-left: 15rpx; 
   margin-bottom: 12rpx;

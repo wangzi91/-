@@ -12,7 +12,41 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    var that = this
+    console.log(options)
+    var olderNumber = options.olderNumber
+    var id = options.id
+    var wlgs = options.wlgs
+
+    wx.request({
+      url: 'https://sale.heliangwang.com/mp/getKdLogistics.php',
+      data: {
+        'function': 'getKdApi',
+        id:id,
+        kd: wlgs,
+        pe: olderNumber
+
+      },
+      header: {
+        'content-type': 'application/x-www-form-urlencoded'
+      },
+      method: 'POST',
+      success: function (res) {
+        
+        var jsonStr = res.data;
+        jsonStr = jsonStr.replace(" "," ");
+        if(typeof jsonStr != 'object'){
+          jsonStr = jsonStr.replace(/\ufeff/g,"");
+          var jj = JSON.parse(jsonStr);
+          res.data = jj
+        }
+        console.log(res.data)
+        that.setData({
+          wuliu: res.data,
+          traces: res.data.Traces.reverse()
+        })
+      }
+    })
   },
 
   /**

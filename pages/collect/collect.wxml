@@ -4,7 +4,6 @@
     <view class='c-text'>收藏为空</view>
   </view>
 </view>
-
 <view class='edit' wx:if="{{hideedit}}" bindtap='editdel'>
   编辑
 </view>
@@ -12,7 +11,7 @@
   完成
 </view>
 <view class="container">
-  <view class="touch-item {{item.isTouchMove ? 'touch-move-active' : ''}}" data-index="{{index}}" bindtouchstart="touchstart" bindtouchmove="touchmove" wx:for="{{cartItems}}" wx:key="">
+  <view class="touch-item {{item.isTouchMove ? 'touch-move-active' : ''}}" data-index="{{index}}" data-id="{{item.id}}" bindtouchstart="touchstart" bindtouchmove="touchmove" wx:for="{{cartItems}}" wx:key="" bindtap='godetail'>
     <view class="content">
       <view class='icon' wx:if="{{showtot}}">
         <icon wx:if="{{item.selected}}" type="success" color="#f8aa09" size="20" bindtap="selectedCart" data-index="{{index}}" />

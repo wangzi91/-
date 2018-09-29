@@ -5,12 +5,65 @@ Page({
    * 页面的初始数据
    */
   data: {
-  
+    showpay:false
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
+  zhifumima: function (e) {
+    this.setData({
+      zfmm: e.detail.value
+    })
+    console.log(this.data.zfmm)
+  },
+  asd: function () {
+    var that = this
+    wx.request({
+      url: 'https://sale.heliangwang.com/mp/getOrder.php',
+      data: {
+        'function': 'getOrderPay',
+        id: that.data.id,
+        uid: that.data.uid,
+        pwd: that.data.zfmm
+      },
+      header: {
+        'content-type': 'application/x-www-form-urlencoded'
+      },
+      method: 'POST',
+      success: function (res) {
+        console.log(res.data)
+        if (res.data.code == 0) {
+          that.setData({
+            showpay: false,
+          })
+          wx.navigateTo({
+            url: '../payOldersucc/payOldersucc?id=' + that.data.id,
+          })
+        } else {
+          wx.showToast({
+            title: res.data.msg,
+            duration: 1500,
+            icon: 'loading'
+          })
+          return false
+        }
+      }
+    })
+  },
+  quxiao: function () {
+    this.setData({
+      showpay: false
+    })
+  },
+  showpay: function (e) {
+    var id = e.currentTarget.dataset.id;
+    console.log(id)
+    this.setData({
+      showpay: true,
+      id: id
+    })
+  },
   onLoad: function (options) {
     var yhuid = wx.getStorageSync('userid')
     this.setData({

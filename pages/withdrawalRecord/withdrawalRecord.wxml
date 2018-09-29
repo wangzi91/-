@@ -1,0 +1,11 @@
+<view class='record-main'>
+  <view class='record' wx:for="{{txjl}}">
+    <view>{{item.amount}}元</view>
+    <view class='record-center'>
+      <view class='recordTime'>到期时间</view>
+      <view>{{item.time}}</view>
+    </view>
+    <view class='quzhifu' wx:if="{{item.bs == 0? true : false}}" bindtap='gowithdraw'>提现</view>
+    <view class='NOquzhifu'wx:if="{{item.bs == 1? true : false}}" >提现</view>
+  </view>
+</view>

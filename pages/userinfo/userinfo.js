@@ -27,15 +27,12 @@ Page({
    */
   onShow: function () {
     var user = wx.getStorageSync("user")
+    var phone = wx.getStorageSync("phone")
     this.setData({
       userinfo :user,
+      phone:phone
     })
-    this.setData({
-      nickname: this.data.userinfo.nickName,
-      images: this.data.userinfo.image,
-      phone: '15566806262'
-    })
-    console.log(this.data.nickname)
+
   },
   gopaypwd:function(){
 wx.navigateTo({
@@ -77,9 +74,14 @@ wx.navigateTo({
   
   },
   xiugaishouji:function(){
-    wx.navigateTo({
-      url: '../xiugaishouji/xiugaishouji',
+    wx.showToast({
+      title: '暂未开通！',
+      icon:'loading',
+      duration:1500
     })
+    // wx.navigateTo({
+    //   url: '../xiugaishouji/xiugaishouji',
+    // })
   },
   goabout:function(){
     wx.navigateTo({

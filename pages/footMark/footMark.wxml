@@ -1,0 +1,7 @@
+<view wx:for='{{foot}}' class='foot' data-id='{{item.id}}' bindtap='godetail'>
+  <image class='c-img' src='{{item.picture}}'></image>
+  <view>
+    <view>{{item.name}}</view>
+    <view class='price'>{{item.price}}</view>
+  </view>
+</view>

@@ -7,10 +7,15 @@ Page({
   data: {
     login: true,
     nickname: '',
-
     unid: '',
-    info:[],
-    balance:''
+    info: [],
+    balance: '',
+    showquanyi:true
+  },
+  showmyquanyi:function(){
+    this.setData({
+      showquanyi: !this.data.showquanyi
+    })
   },
   gocollect: function() {
     wx.navigateTo({
@@ -27,15 +32,40 @@ Page({
       url: '../fenxiao/fenxiao',
     })
   },
-
+  onLoad: function(options) {
+    var url = decodeURIComponent(options.q)
+    var loc = url.substring(url.lastIndexOf('=') + 1, url.length);
+    console.log('传递值为' + loc)
+    this.setData({
+      wxcode: loc
+    })
+    // var unionid = wx.getStorageSync('unionid')
+    // this.setData({
+    //   unid: unionid
+    // })
+    //  console.log(this.data.unid)
+    // if (!unionid) {
+    //   wx.redirectTo({
+    //     url: '../login/login?TDChannelId=' + this.data.wxcode,
+    //   })
+    // }
+  },
   onShow: function() {
-    var userinfo = wx.getStorageSync('user')
     var unionid = wx.getStorageSync('unionid')
+    // this.setData({
+    //   unid: unionid
+    // })
+    //  console.log(this.data.unid)
+    if (!unionid) {
+      wx.redirectTo({
+        url: '../login/login?TDChannelId=' + this.data.wxcode,
+      })
+    }
+    var that = this
+    var uid = wx.getStorageSync('userid')
+    var userinfo = wx.getStorageSync('user')
     var balance = wx.getStorageSync('balance')
     var phone = wx.getStorageSync('phone')
-    this.setData({
-      unid: unionid
-    })
     this.setData({
       info: userinfo
     })
@@ -45,12 +75,51 @@ Page({
     this.setData({
       phone: phone
     })
+    //等级
+    wx.request({
+      url: 'https://sale.heliangwang.com/mp/getRecharge.php',
+      data: {
+        'function': 'getLevel',
+        uid: uid
+      },
+      header: {
+        'content-type': 'application/x-www-form-urlencoded'
+      },
+      method: 'POST',
+      success: function (res) {
+        console.log(res)
+that.setData({
+  quanyiimg:res.data
+})
+      }
+    })
+    //余额
+    wx.request({
+      url: 'https://sale.heliangwang.com/mp/getMineAccount.php',
+      data: {
+        'function': 'getMineAccount',
+        uid: uid
+      },
+      header: {
+        'content-type': 'application/x-www-form-urlencoded'
+      },
+      method: 'POST',
+      success: function(res) {
+        console.log(res)
+        that.setData({
+          yue: res.data.account_balance,
+          ketixianyue: res.data.current_withdraw_cash,
+          jifen: res.data.rest_reward_points
+        })
+      }
+    })
 
-    if (this.data.unid == '') {
-      wx.redirectTo({
-        url: '../login/login',
-      })
-    }
+  },
+  goorderlist: function() {
+    wx.navigateTo({
+      url: '../myorder/myorder',
+    })
+
   },
   goorderlist: function() {
     wx.navigateTo({
@@ -136,26 +205,31 @@ Page({
       url: '../userinfo/userinfo'
     })
   },
-  show: function() {
-    wx.showToast({
-      title: '别点了，没用！',
-      icon: 'loading',
-      duration: 1000
-    })
-  },
-  godaishouhuo:function(){
+  // show: function() {
+  //   wx.showToast({
+  //     title: '别点了，没用！',
+  //     icon: 'loading',
+  //     duration: 1000
+  //   })
+  // },
+  godaishouhuo: function() {
     wx.navigateTo({
       url: '../daishouhuo/daishouhuo'
     })
   },
-  godaipingjia: function () {
+  godaipingjia: function() {
     wx.navigateTo({
       url: '../daipingjia/daipingjia'
     })
   },
-  goyiwancheng: function () {
+  goyiwancheng: function() {
     wx.navigateTo({
       url: '../yiwancheng/yiwancheng'
+    })
+  },
+  gofoot: function() {
+    wx.navigateTo({
+      url: '../footMark/footMark'
     })
   }
 })
