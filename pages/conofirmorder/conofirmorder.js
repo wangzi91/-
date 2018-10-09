@@ -1,4 +1,5 @@
 // pages/conofirmorder/conofirmorder.js
+const app = getApp();
 Page({
 
   /**
@@ -42,7 +43,7 @@ Page({
         showjifen: true
       })
       wx.request({
-        url: 'https://sale.heliangwang.com/mp/getOrderAdd.php',
+        url: app.globalData.httpsUrl+'/mp/getOrderAdd.php',
         method: 'POST',
         data: {
           'function': 'getPoint',
@@ -65,7 +66,7 @@ Page({
       })
     } else {
       wx.request({
-        url: 'https://sale.heliangwang.com/mp/getOrderAdd.php',
+        url: app.globalData.httpsUrl +'/mp/getOrderAdd.php',
         data: {
           'function': 'getShowOrderCar',
           uid: uid,
@@ -151,7 +152,7 @@ Page({
     var uid = wx.getStorageSync('userid')
     var bs = wx.getStorageSync('bs')
     wx.request({
-      url: 'https://sale.heliangwang.com/mp/getOrderAdd.php',
+      url: app.globalData.httpsUrl +'/mp/getOrderAdd.php',
       data: {
         'function': 'getShowOrderCar',
         uid: uid,
@@ -275,7 +276,7 @@ Page({
     //余额支付
     if (this.data.values == 0) {
       wx.request({
-        url: 'https://sale.heliangwang.com/mp/getOrderAdd.php',
+        url: app.globalData.httpsUrl +'/mp/getOrderAdd.php',
         data: {
           'function': 'getAdding',
           uid: uid,

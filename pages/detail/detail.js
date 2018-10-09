@@ -1,3 +1,5 @@
+
+const app = getApp();
 Page({
 
   /**
@@ -35,7 +37,7 @@ Page({
       var that = this
       var id = this.data.plid
       wx.request({
-        url: 'https://sale.heliangwang.com/mp/getCommodityDetail.php',
+        url: app.globalData.httpsUrl+'/mp/getCommodityDetail.php',
         data: {
           'function': 'getCommodityComment',
           id: id
@@ -105,7 +107,7 @@ Page({
     })
     var that = this
     wx.request({
-      url: 'https://sale.heliangwang.com/mp/getCommodityDetail.php',
+      url: app.globalData.httpsUrl +'/mp/getCommodityDetail.php',
       data: {
         'function': 'getCommodityDetail',
         id: id
@@ -125,7 +127,7 @@ Page({
     //评论
     var id = this.data.plid
     wx.request({
-      url: 'https://sale.heliangwang.com/mp/getCommodityDetail.php',
+      url: app.globalData.httpsUrl +'/mp/getCommodityDetail.php',
       data: {
         'function': 'getCommodityComment',
         id: id
@@ -159,7 +161,7 @@ Page({
     console.log(pid, pvalue, pchandi, puid)
 
     wx.request({
-      url: 'https://sale.heliangwang.com/mp/getShoppingCart.php',
+      url: app.globalData.httpsUrl +'/mp/getShoppingCart.php',
       data: {
         'function': 'getAddCart',
         id: puid,
@@ -223,7 +225,7 @@ Page({
     var that = this
     var id = this.data.plid
     wx.request({
-      url: 'https://sale.heliangwang.com/mp/getCommodityDetail.php',
+      url: app.globalData.httpsUrl +'/mp/getCommodityDetail.php',
       data: {
         'function': 'getCommodityAttr',
         id: id
@@ -317,7 +319,7 @@ Page({
     var puid = this.data.userid
     console.log(pid, pvalue, pchandi, puid)
     wx.request({
-      url: 'https://sale.heliangwang.com/mp/getOrderAdd.php',
+      url: app.globalData.httpsUrl +'/mp/getOrderAdd.php',
       data: {
         'function': 'getOrderDetailCom',
         id: puid,

@@ -29,7 +29,7 @@ Page({
     var that = this
     //广告
     wx.request({
-      url: 'https://sale.heliangwang.com/mp/getImage.php',
+      url: app.globalData.httpsUrl+'/mp/getImage.php',
       data: {
         'function': 'getAdv'
       },
@@ -46,7 +46,7 @@ Page({
     })
     //轮播
     wx.request({
-      url: 'https://sale.heliangwang.com/mp/getImage.php',
+      url: app.globalData.httpsUrl +'/mp/getImage.php',
       data: {
         'function': 'getImage'
       },
@@ -63,7 +63,7 @@ Page({
     })
     //梁讯index
     wx.request({
-      url: 'https://sale.heliangwang.com/mp/getMessage.php',
+      url: app.globalData.httpsUrl +'/mp/getMessage.php',
       data: {
         'function': 'getMessageIndex'
       },
@@ -80,7 +80,7 @@ Page({
     })
     //品牌推荐
     wx.request({
-      url: 'https://sale.heliangwang.com/mp/getCommodityRelated.php',
+      url: app.globalData.httpsUrl +'/mp/getCommodityRelated.php',
       data: {
         'function': 'getCommodityBrand'
       },
@@ -97,7 +97,7 @@ Page({
     })
     //r热卖
     wx.request({
-      url: 'https://sale.heliangwang.com/mp/getCommodityRelated.php',
+      url: app.globalData.httpsUrl +'/mp/getCommodityRelated.php',
       data: {
         'function': 'getCommodityHot'
       },
@@ -159,7 +159,7 @@ Page({
       url: '../detail/detail?id=' + id,
     })
     wx.request({
-      url: 'https://sale.heliangwang.com/mp/getMine.php',
+      url: app.globalData.httpsUrl +'/mp/getMine.php',
       data: {
         'function': 'getMineFooterAdd',
         id: id,

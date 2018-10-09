@@ -30,7 +30,7 @@ Page({
       }
     })
     wx.request({
-      url: 'https://sale.heliangwang.com/mp/getCommodityRelated.php',
+      url: app.globalData.httpsUrl+'/mp/getCommodityRelated.php',
       method: 'POST',
       data: {
         'function':'getCommodityCategory'
@@ -132,7 +132,7 @@ Page({
     // })
 
     wx.request({
-      url: 'https://sale.heliangwang.com/mp/getMine.php',
+      url: app.globalData.httpsUrl +'/mp/getMine.php',
       data: {
         'function': 'getMineFooterAdd',
         id: id,

@@ -1,3 +1,5 @@
+const app = getApp()
+
 Page({
   data: {
     startX: 0, //开始坐标
@@ -66,7 +68,7 @@ Page({
     var jarr2 = JSON.stringify(arrsel2)
     var userid = this.data.uid2
     wx.request({
-      url: 'https://sale.heliangwang.com/mp/getSumCart.php',
+      url: app.globalData.httpsUrl+'/mp/getSumCart.php',
       data: {
         'function': 'getDelCart',
         data: jarr2,
@@ -128,7 +130,7 @@ Page({
       console.log(arrsel2)
       var jarr2 = JSON.stringify(arrsel2)
       wx.request({
-        url: 'https://sale.heliangwang.com/mp/getSumCart.php',
+        url: app.globalData.httpsUrl +'/mp/getSumCart.php',
         data: {
           'function': 'getSumCart',
           data: jarr2
@@ -183,7 +185,7 @@ Page({
     console.log(arrsel2)
     var jarr2 = JSON.stringify(arrsel2)
     wx.request({
-      url: 'https://sale.heliangwang.com/mp/getSumCart.php',
+      url: app.globalData.httpsUrl +'/mp/getSumCart.php',
       data: {
         'function': 'getSumCart',
         data: jarr2
@@ -236,7 +238,7 @@ Page({
     console.log(arrsel2)
     var jarr2 = JSON.stringify(arrsel2)
     wx.request({
-      url: 'https://sale.heliangwang.com/mp/getSumCart.php',
+      url: app.globalData.httpsUrl +'/mp/getSumCart.php',
       data: {
         'function': 'getSumCart',
         data: jarr2
@@ -295,7 +297,7 @@ Page({
     console.log(arrsel2)
     var jarr2 = JSON.stringify(arrsel2)
     wx.request({
-      url: 'https://sale.heliangwang.com/mp/getSumCart.php',
+      url: app.globalData.httpsUrl +'/mp/getSumCart.php',
       data: {
         'function': 'getSumCart',
         data: jarr2
@@ -407,7 +409,7 @@ Page({
     var jarr2 = JSON.stringify(arrsel2)
     var userid = this.data.uid2
     wx.request({
-      url: 'https://sale.heliangwang.com/mp/getSumCart.php',
+      url: app.globalData.httpsUrl +'/mp/getSumCart.php',
       data: {
         'function': 'getDelCart',
         data: jarr2,
@@ -452,7 +454,7 @@ Page({
     var userid = this.data.uid2
     console.log(userid)
     wx.request({
-      url: 'https://sale.heliangwang.com/mp/getShoppingCart.php',
+      url: app.globalData.httpsUrl +'/mp/getShoppingCart.php',
       data: {
         'function': 'getShowCart',
         id: userid
@@ -547,7 +549,7 @@ Page({
       return false
     }
     wx.request({
-      url: 'https://sale.heliangwang.com/mp/getSumCart.php',
+      url: app.globalData.httpsUrl +'/mp/getSumCart.php',
       data: {
         'function': 'getSetCart',
         id: jarr2,

@@ -1,4 +1,5 @@
 // pages/payPassword/payPassword.js
+const app = getApp();
 Page({
 
   /**
@@ -96,7 +97,7 @@ Page({
     var that = this
     var uid = wx.getStorageSync('userid')
     wx.request({
-      url: 'https://sale.heliangwang.com/mp/getMineAccount.php',
+      url: app.globalData.httpsUrl +'/mp/getMineAccount.php',
       data: {
         'function': 'getPayPassword',
         id: uid,

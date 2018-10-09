@@ -1,4 +1,5 @@
 // pages/tradingRecord/tradingRecord.js
+const app = getApp();
 Page({
 
   /**
@@ -30,7 +31,7 @@ Page({
     var that = this
     console.log(uid)
     wx.request({
-      url: 'https://sale.heliangwang.com/mp/getMineAccount.php',
+      url: app.globalData.httpsUrl +'/mp/getMineAccount.php',
       data: {
         'function': 'getAccountRecode',
         uid: uid

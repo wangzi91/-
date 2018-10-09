@@ -1,4 +1,5 @@
 // pages/riceclassify/riceclassify.js
+const app = getApp();
 Page({
 
   /**
@@ -19,7 +20,7 @@ Page({
 
 
     wx.request({
-      url: 'https://sale.heliangwang.com/mp/getMine.php',
+      url: app.globalData.httpsUrl +'/mp/getMine.php',
       data: {
         'function': 'getMineFooterAdd',
         id: id,
@@ -42,7 +43,7 @@ Page({
     //价格排序
     if (this.data.currentTab == 1){
       wx.request({
-        url: 'https://sale.heliangwang.com/mp/getCommodityRelated.php',
+        url: app.globalData.httpsUrl +'/mp/getCommodityRelated.php',
         data: {
           'function': 'getCommodityPrice',
           id: that.data.id
@@ -74,7 +75,7 @@ Page({
 
     //默认销量排序
     wx.request({
-      url: 'https://sale.heliangwang.com/mp/getCommodityRelated.php',
+      url: app.globalData.httpsUrl +'/mp/getCommodityRelated.php',
       data: {
         'function': 'getCommoditySales',
         id: idx

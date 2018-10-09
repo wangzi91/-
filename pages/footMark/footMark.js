@@ -1,4 +1,5 @@
 // pages/footMark/footMark.js
+const app = getApp();
 Page({
 
   /**
@@ -18,7 +19,7 @@ Page({
       uid: uid
     })
     wx.request({
-      url: 'https://sale.heliangwang.com/mp/getMine.php',
+      url: app.globalData.httpsUrl+'/mp/getMine.php',
       data: {
         'function': 'getMineFooter',
         uid: this.data.uid
@@ -55,7 +56,7 @@ Page({
       url: '../detail/detail?id=' + id,
     })
     wx.request({
-      url: 'https://sale.heliangwang.com/mp/getMine.php',
+      url: app.globalData.httpsUrl +'/mp/getMine.php',
       data: {
         'function': 'getMineFooterAdd',
         id: id,

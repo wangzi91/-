@@ -1,4 +1,5 @@
 // pages/evaluate/evaluate.js
+const app = getApp();
 Page({
 
   /**

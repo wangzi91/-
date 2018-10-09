@@ -35,6 +35,7 @@ App({
     })
   },
   globalData: {
-    userInfo: null
+    userInfo: null,
+    httpsUrl:'https://sale.heliangwang.com'
   }
 })

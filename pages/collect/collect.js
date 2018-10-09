@@ -1,3 +1,5 @@
+const app = getApp();
+
 Page({
   data: {
     startX: 0, //开始坐标
@@ -252,7 +254,7 @@ Page({
     })
 
     wx.request({
-      url: 'https://sale.heliangwang.com/mp/getMine.php',
+      url: app.globalData.httpsUrl+'/mp/getMine.php',
       data: {
         'function': 'getMineFooterAdd',
         id: id,

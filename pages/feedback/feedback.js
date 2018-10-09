@@ -1,3 +1,4 @@
+const app = getApp();
 // pages/feedback/feedback.js
 Page({
 

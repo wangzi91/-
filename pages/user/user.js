@@ -1,4 +1,5 @@
 // pages/user/user.js
+const app = getApp();
 Page({
 
   /**
@@ -10,9 +11,9 @@ Page({
     unid: '',
     info: [],
     balance: '',
-    showquanyi:true
+    showquanyi: true
   },
-  showmyquanyi:function(){
+  showmyquanyi: function() {
     this.setData({
       showquanyi: !this.data.showquanyi
     })
@@ -52,6 +53,7 @@ Page({
   },
   onShow: function() {
     var unionid = wx.getStorageSync('unionid')
+    console.log("unionid" + unionid)
     // this.setData({
     //   unid: unionid
     // })
@@ -77,7 +79,7 @@ Page({
     })
     //等级
     wx.request({
-      url: 'https://sale.heliangwang.com/mp/getRecharge.php',
+      url: app.globalData.httpsUrl + '/mp/getRecharge.php',
       data: {
         'function': 'getLevel',
         uid: uid
@@ -86,16 +88,16 @@ Page({
         'content-type': 'application/x-www-form-urlencoded'
       },
       method: 'POST',
-      success: function (res) {
+      success: function(res) {
         console.log(res)
-that.setData({
-  quanyiimg:res.data
-})
+        that.setData({
+          quanyiimg: res.data
+        })
       }
     })
     //余额
     wx.request({
-      url: 'https://sale.heliangwang.com/mp/getMineAccount.php',
+      url: app.globalData.httpsUrl + '/mp/getMineAccount.php',
       data: {
         'function': 'getMineAccount',
         uid: uid

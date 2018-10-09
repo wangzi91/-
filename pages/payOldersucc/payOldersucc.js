@@ -1,4 +1,5 @@
 // pages/tradesucc/tradesucc.js
+const app = getApp();
 Page({
 
   /**
@@ -16,7 +17,7 @@ Page({
     console.log(id)
     var that = this
     wx.request({
-      url: 'https://sale.heliangwang.com/mp/getOrder.php',
+      url: app.globalData.httpsUrl +'/mp/getOrder.php',
       data: {
         'function': 'getOrderCompleteAddress',
         id: id,
@@ -55,7 +56,7 @@ Page({
       url: '../detail/detail?id=' + id,
     })
     wx.request({
-      url: 'https://sale.heliangwang.com/mp/getMine.php',
+      url: app.globalData.httpsUrl +'/mp/getMine.php',
       data: {
         'function': 'getMineFooterAdd',
         id: id,
@@ -82,7 +83,7 @@ Page({
    
     var that = this
     wx.request({
-      url: 'https://sale.heliangwang.com/mp/getMine.php',
+      url: app.globalData.httpsUrl +'/mp/getMine.php',
       data: {
         'function': 'getMineLike',
         uid: that.data.uid,

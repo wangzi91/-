@@ -1,5 +1,6 @@
 // pages/quickRegister/quickRegister.js
 var interval = null
+const app = getApp();
 Page({
 
   /**

@@ -1,4 +1,5 @@
 // pages/daizhifu/daizhifu.js
+const app = getApp();
 Page({
 
   /**
@@ -20,7 +21,7 @@ Page({
   asd: function () {
     var that = this
     wx.request({
-      url: 'https://sale.heliangwang.com/mp/getOrder.php',
+      url: app.globalData.httpsUrl+'/mp/getOrder.php',
       data: {
         'function': 'getOrderPay',
         id: that.data.id,
@@ -73,7 +74,7 @@ Page({
     var uid = this.data.uid
     console.log('uid:' + uid)
     wx.request({
-      url: 'https://sale.heliangwang.com/mp/getOrder.php',
+      url: app.globalData.httpsUrl +'/mp/getOrder.php',
       data: {
         'function': 'getOrderPendingPay',
         uid: uid
@@ -95,7 +96,7 @@ Page({
     console.log(e)
     var id = e.currentTarget.dataset.id
     wx.request({
-      url: 'https://sale.heliangwang.com/mp/getOrder.php',
+      url: app.globalData.httpsUrl +'/mp/getOrder.php',
       data: {
         'function': 'getOrderCancel',
         id: id

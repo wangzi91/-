@@ -1,4 +1,5 @@
 // pages/Logistics/Logistics.js
+const app = getApp()
 Page({
 
   /**
@@ -19,7 +20,7 @@ Page({
     var wlgs = options.wlgs
 
     wx.request({
-      url: 'https://sale.heliangwang.com/mp/getKdLogistics.php',
+      url: app.globalData.httpsUrl +'/mp/getKdLogistics.php',
       data: {
         'function': 'getKdApi',
         id:id,

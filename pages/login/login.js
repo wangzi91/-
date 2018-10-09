@@ -1,5 +1,6 @@
 // pages/login/login.js
 var interval = null
+const app = getApp();
 Page({
 
   /**
@@ -19,7 +20,7 @@ Page({
     // this.setData({
     //   wxcode:loc
     // })
-
+var that = this
     var code = options.TDChannelId
 console.log('传过来code'+  code)
     this.setData({
@@ -31,7 +32,14 @@ console.log('传过来code'+  code)
       success: function(res) {
         if (res.authSetting['scope.userInfo']) {
           wx.getUserInfo({
-            success: function(res) {}
+            withCredentials: true,
+            success: function(res) {
+              console.log(res)
+              // that.setData({
+              //   enc: res.data.encryptedData,
+              //   iv:res.data.iv
+              // })
+            }
           })
         }
       }
@@ -93,7 +101,7 @@ console.log('传过来code'+  code)
       return false
     }
     wx.request({
-      url: 'https://sale.heliangwang.com/mp/changePhone.php',
+      url: app.globalData.httpsUrl+'/mp/changePhone.php',
       data: {
         'function': "getPhoneCode",
         phone: that.data.phonenum
@@ -161,6 +169,7 @@ console.log('传过来code'+  code)
 
   },
   bindGetUserInfo: function(e) {
+    console.log(e)
     if (this.data.phonenum == '') {
       wx.showToast({
         title: '请填写手机号',
@@ -182,6 +191,8 @@ console.log('传过来code'+  code)
     this.setData({
       nickName: e.detail.userInfo.nickName,
       image: e.detail.userInfo.avatarUrl,
+      enc: e.detail.encryptedData,
+      iv: e.detail.iv
     })
     var login = {
       nickName: this.data.nickName,
@@ -191,10 +202,10 @@ console.log('传过来code'+  code)
     wx.login({
       success: function(res) {
         var _code = res.code;
-       
+        console.log("code:"+_code)
         if (_code) {
           wx.request({
-            url: 'https://sale.heliangwang.com/mp/getUserinfo.php',
+            url: app.globalData.httpsUrl +'/mp/getUserinfo.php',
             data: {
               code: _code,
               'function': "getUserinfo",
@@ -202,14 +213,16 @@ console.log('传过来code'+  code)
               headimg: that.data.image,
               phone: that.data.phonenum,
               phonecode: that.data.yzm,
-              superior: that.data.code2
+              superior: that.data.code2,
+              encryptedData:that.data.enc,
+              iv:that.data.iv
             },
             method: 'POST',
             header: {
               'content-type': 'application/x-www-form-urlencoded'
             },
             success: function(res) {
-              
+              console.log(res)
               if (res.data.code == 0) {
                 console.log(res.data.msg)
                 wx.showToast({
@@ -226,6 +239,7 @@ console.log('传过来code'+  code)
                 wx.setStorageSync('unionid', that.data.unid)
                 wx.setStorageSync('phone', that.data.phone)
                 wx.setStorageSync('userid', that.data.userid)
+                console.log(that.data.unid)
                 wx.switchTab({
                   url: '../user/user',
                 })

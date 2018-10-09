@@ -1,4 +1,4 @@
-var app = getApp()
+const app = getApp()
 Page({
   data: {
     navbar: ['全部', '待支付', '待收货', '待评价', '已完成'],
@@ -24,7 +24,7 @@ Page({
   asd: function() {
     var that = this
     wx.request({
-      url: 'https://sale.heliangwang.com/mp/getOrder.php',
+      url: app.globalData.httpsUrl +'/mp/getOrder.php',
       data: {
         'function': 'getOrderPay',
         id: that.data.id,
@@ -81,7 +81,7 @@ Page({
           //   url: '../waitsh/waitsh?id='+ id,
           // })
           wx.request({
-            url: 'https://sale.heliangwang.com/mp/getOrder.php',
+            url: app.globalData.httpsUrl +'/mp/getOrder.php',
             data: {
               'function': 'getOrderConfirm',
               id: id
@@ -120,7 +120,7 @@ Page({
       var uid = this.data.uid
       console.log('uid:' + uid)
       wx.request({
-        url: 'https://sale.heliangwang.com/mp/getOrder.php',
+        url: app.globalData.httpsUrl +'/mp/getOrder.php',
         data: {
           'function': 'getOrderPendingPay',
           uid: uid
@@ -144,7 +144,7 @@ Page({
       var uid = this.data.uid
       console.log('uid:' + uid)
       wx.request({
-        url: 'https://sale.heliangwang.com/mp/getOrder.php',
+        url: app.globalData.httpsUrl +'/mp/getOrder.php',
         data: {
           'function': 'getOrderReceipt',
           uid: uid
@@ -168,7 +168,7 @@ Page({
       var uid = this.data.uid
       console.log('uid:' + uid)
       wx.request({
-        url: 'https://sale.heliangwang.com/mp/getOrder.php',
+        url: app.globalData.httpsUrl +'/mp/getOrder.php',
         data: {
           'function': 'getOrderComment',
           uid: uid
@@ -192,7 +192,7 @@ Page({
       var uid = this.data.uid
       console.log('uid:' + uid)
       wx.request({
-        url: 'https://sale.heliangwang.com/mp/getOrder.php',
+        url: app.globalData.httpsUrl +'/mp/getOrder.php',
         data: {
           'function': 'getOrderComplete',
           uid: uid
@@ -223,7 +223,7 @@ Page({
     console.log(e)
     var id = e.currentTarget.dataset.id
     wx.request({
-      url: 'https://sale.heliangwang.com/mp/getOrder.php',
+      url: app.globalData.httpsUrl +'/mp/getOrder.php',
       data: {
         'function': 'getOrderCancel',
         id: id
@@ -272,7 +272,7 @@ Page({
     var uid = this.data.uid
     console.log('uid:' + uid)
     wx.request({
-      url: 'https://sale.heliangwang.com/mp/getOrder.php',
+      url: app.globalData.httpsUrl +'/mp/getOrder.php',
       data: {
         'function': 'getAllOrder',
         uid: uid
@@ -307,7 +307,7 @@ Page({
         if (res.confirm) {
           console.log('用户点击确定')
           wx.request({
-            url: 'https://sale.heliangwang.com/mp/getOrder.php',
+            url: app.globalData.httpsUrl +'/mp/getOrder.php',
             data: {
               'function': 'getOrderDel',
               id: id
@@ -357,7 +357,7 @@ Page({
         if (res.confirm) {
           console.log('用户点击确定')
           wx.request({
-            url: 'https://sale.heliangwang.com/mp/getOrder.php',
+            url: app.globalData.httpsUrl +'/mp/getOrder.php',
             data: {
               'function': 'getOrderDel',
               id: id
@@ -411,7 +411,7 @@ Page({
           //         allOrder: qbdelorder
           //       })
           wx.request({
-            url: 'https://sale.heliangwang.com/mp/getOrder.php',
+            url: app.globalData.httpsUrl +'/mp/getOrder.php',
             data: {
               'function': 'getOrderDel',
               id: id

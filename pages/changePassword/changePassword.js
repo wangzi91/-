@@ -1,5 +1,6 @@
 // pages/changePassword/changePassword.js
 var interval = null
+const app = getApp()
 Page({
 
   /**

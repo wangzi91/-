@@ -4,7 +4,7 @@
     {{messdetails.Content_result.title}}
   </view> -->
    <block wx:for='{{messagedetailImg}}'>
-    <image  class='img' src='{{item.content_picture}}'></image>
+    <image  class='img' src='{{item.content_picture}}' mode="widthFix"></image>
   </block>
   <!-- <view class='cons'> {{messdetails.Content_result.content}}</view>  -->
  

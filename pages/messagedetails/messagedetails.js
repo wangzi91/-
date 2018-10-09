@@ -1,4 +1,5 @@
 // pages/messagedetails/messagedetails.js
+const app = getApp();
 Page({
 
   /**
@@ -23,7 +24,7 @@ Page({
     var id = e.id
     console.log(id);
     wx.request({
-      url: 'https://sale.heliangwang.com/mp/getMessage.php',
+      url: app.globalData.httpsUrl+'/mp/getMessage.php',
       data: {
         'function': 'getMessageContent',
         id:id
@@ -33,12 +34,11 @@ Page({
       },
       method: 'POST',
       success: function (res) {
-        console.log(res.data.ContentImg_result)
+        console.log(res)
         // that.setData({
         //   imgUrls: res.data
         // })
         that.setData({
-          // messdetails: res.data,
           messagedetailImg: res.data.ContentImg_result
         })
       }

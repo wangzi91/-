@@ -1,4 +1,5 @@
 // pages/myaccount/myaccount.js
+const app = getApp();
 Page({
 
   /**
@@ -21,7 +22,7 @@ Page({
     var uid = wx.getStorageSync('userid')
     var that = this
     wx.request({
-      url: 'https://sale.heliangwang.com/mp/getMineAccount.php',
+      url: app.globalData.httpsUrl +'/mp/getMineAccount.php',
       data: {
         'function': 'getMineAccount',
         uid: uid

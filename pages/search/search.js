@@ -1,4 +1,4 @@
-var app = getApp()
+const app = getApp()
 Page({
   data: {
     navbar: ['热门搜索', '最近搜索'],
@@ -21,7 +21,7 @@ Page({
       url: '../detail/detail?id='+id,
     })
     wx.request({
-      url: 'https://sale.heliangwang.com/mp/getMine.php',
+      url: app.globalData.httpsUrl +'/mp/getMine.php',
       data: {
         'function': 'getMineFooterAdd',
         id: id,
@@ -54,7 +54,7 @@ Page({
         return false
       }
       wx.request({
-        url: 'https://sale.heliangwang.com/mp/getCommodityRelated.php',
+        url: app.globalData.httpsUrl +'/mp/getCommodityRelated.php',
         data: {
           keyword: keyWord,
           'function': 'getCommoditySearch'
@@ -84,7 +84,7 @@ Page({
         return false
       }
       wx.request({
-        url: 'https://sale.heliangwang.com/mp/getCommodityRelated.php',
+        url: app.globalData.httpsUrl +'/mp/getCommodityRelated.php',
         data: {
           keyword: keyWord,
           'function': 'getCommoditySearch'
@@ -149,7 +149,7 @@ Page({
 
     var that = this
     wx.request({
-      url: 'https://sale.heliangwang.com/mp/getCommodityRelated.php',
+      url: app.globalData.httpsUrl +'/mp/getCommodityRelated.php',
       data: {
         'function': 'getCommodityKeyword'
       },

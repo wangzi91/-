@@ -1,4 +1,5 @@
 // pages/ricemessage/ricemessage.js
+const app = getApp()
 Page({
 
   /**
@@ -16,7 +17,7 @@ Page({
     var that = this
     //梁讯列表
     wx.request({
-      url: 'https://sale.heliangwang.com/mp/getMessage.php',
+      url: app.globalData.httpsUrl +'/mp/getMessage.php',
       data: {
         'function': 'getMessageList'
       },

@@ -1,4 +1,4 @@
-var app = getApp()
+const app = getApp();
 Page({
   data: {
     navbar: ['大米', '小米'],
@@ -21,7 +21,7 @@ Page({
     //价格排序
     if (this.data.currentTab2 == 1) {
       wx.request({
-        url: 'https://sale.heliangwang.com/mp/getCommodityRelated.php',
+        url: app.globalData.httpsUrl +'/mp/getCommodityRelated.php',
         data: {
           'function': 'getCommodityPrice',
           id: 5
@@ -47,7 +47,7 @@ Page({
     //价格排序
     if (this.data.currentTab3 == 1) {
       wx.request({
-        url: 'https://sale.heliangwang.com/mp/getCommodityRelated.php',
+        url: app.globalData.httpsUrl +'/mp/getCommodityRelated.php',
         data: {
           'function': 'getCommodityPrice',
           id: 6
@@ -72,7 +72,7 @@ Page({
     if (this.data.currentTab == 0) {
       var that = this
       wx.request({
-        url: 'https://sale.heliangwang.com/mp/getCommodityRelated.php',
+        url: app.globalData.httpsUrl +'/mp/getCommodityRelated.php',
         method: 'POST',
         data: {
           'function': 'getCommodityCategory'
@@ -92,7 +92,7 @@ Page({
     if (this.data.currentTab == 1) {
       var that = this
       wx.request({
-        url: 'https://sale.heliangwang.com/mp/getCommodityRelated.php',
+        url: app.globalData.httpsUrl +'/mp/getCommodityRelated.php',
         method: 'POST',
         data: {
           'function': 'getCommodityCategory'
@@ -117,7 +117,7 @@ Page({
     })
     console.log(this.data.uid)
     wx.request({
-      url: 'https://sale.heliangwang.com/mp/getMine.php',
+      url: app.globalData.httpsUrl +'/mp/getMine.php',
       data: {
         'function': 'getMineFooterAdd',
         id: id,
@@ -139,7 +139,7 @@ Page({
   onLoad: function() {
     var that = this
     wx.request({
-      url: 'https://sale.heliangwang.com/mp/getCommodityRelated.php',
+      url: app.globalData.httpsUrl +'/mp/getCommodityRelated.php',
       method: 'POST',
       data: {
         'function': 'getCommoditySales',

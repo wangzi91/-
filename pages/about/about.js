@@ -1,4 +1,5 @@
 // pages/about/about.js
+const app = getApp()
 Page({
 
   /**
@@ -14,7 +15,7 @@ Page({
   onLoad: function (options) {
     var that = this
     wx.request({
-      url: 'https://sale.heliangwang.com/mp/getImage.php',
+      url: app.globalData.httpsUrl +'/mp/getImage.php',
       data: {
         'function': 'getAboutOur',
        

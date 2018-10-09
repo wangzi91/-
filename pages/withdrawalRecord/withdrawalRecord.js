@@ -1,4 +1,5 @@
 // pages/withdrawalRecord/withdrawalRecord.js
+const app = getApp();
 Page({
 
   /**
@@ -19,7 +20,7 @@ Page({
     var userid = wx.getStorageSync('userid');
     var that = this;
     wx.request({
-      url: 'https://sale.heliangwang.com/mp/getRecharge.php',
+      url: app.globalData.httpsUrl +'/mp/getRecharge.php',
       method: 'POST',
       data: {
         'function': 'getRecharge',
