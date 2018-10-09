@@ -40,16 +40,6 @@ Page({
     this.setData({
       wxcode: loc
     })
-    // var unionid = wx.getStorageSync('unionid')
-    // this.setData({
-    //   unid: unionid
-    // })
-    //  console.log(this.data.unid)
-    // if (!unionid) {
-    //   wx.redirectTo({
-    //     url: '../login/login?TDChannelId=' + this.data.wxcode,
-    //   })
-    // }
   },
   onShow: function() {
     var unionid = wx.getStorageSync('unionid')
@@ -193,8 +183,6 @@ Page({
         wx.setStorageSync('addr', addr)
       }
     })
-
-
   },
   godaizhifu: function(e) {
 
