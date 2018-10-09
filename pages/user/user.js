@@ -207,13 +207,6 @@ Page({
       url: '../userinfo/userinfo'
     })
   },
-  // show: function() {
-  //   wx.showToast({
-  //     title: '别点了，没用！',
-  //     icon: 'loading',
-  //     duration: 1000
-  //   })
-  // },
   godaishouhuo: function() {
     wx.navigateTo({
       url: '../daishouhuo/daishouhuo'
